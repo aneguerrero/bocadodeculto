@@ -30,15 +30,33 @@
 		<!--grid platos-->
         <div class="platos-menu-grid">
             <div class="plato-menu-card card1">
-                <img src="{% static 'images/milkshake.png' %}" alt="Batido">
+                {% if plato_batido %}
+                    <a href="{% url 'detalle_plato' plato_batido.id %}" aria-label="Ver detalle de {{ plato_batido.nombre }}">
+                        <img src="{% static 'images/milkshake.png' %}" alt="{{ plato_batido.nombre }}">
+                    </a>
+                {% else %}
+                    <img src="{% static 'images/milkshake.png' %}" alt="Batido">
+                {% endif %}
             </div>
 
             <div class="plato-menu-card card2">
-                <img src="{% static 'images/paella.png' %}" alt="Paella">
+                {% if plato_paella %}
+                    <a href="{% url 'detalle_plato' plato_paella.id %}" aria-label="Ver detalle de {{ plato_paella.nombre }}">
+                        <img src="{% static 'images/paella.png' %}" alt="{{ plato_paella.nombre }}">
+                    </a>
+                {% else %}
+                    <img src="{% static 'images/paella.png' %}" alt="Paella">
+                {% endif %}
             </div>
 
             <div class="plato-menu-card card3">
-                <img src="{% static 'images/ramen.png' %}" alt="Ramen">
+                {% if plato_ramen %}
+                    <a href="{% url 'detalle_plato' plato_ramen.id %}" aria-label="Ver detalle de {{ plato_ramen.nombre }}">
+                        <img src="{% static 'images/ramen.png' %}" alt="{{ plato_ramen.nombre }}">
+                    </a>
+                {% else %}
+                    <img src="{% static 'images/ramen.png' %}" alt="Ramen">
+                {% endif %}
             </div>
         </div>
 		

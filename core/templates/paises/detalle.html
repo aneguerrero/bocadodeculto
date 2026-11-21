@@ -50,11 +50,6 @@
             <header class="detalle-header">
                 <h1>{{ pais.nombre }}</h1>
 
-                {% if pais.descripcion %}
-                    <p class="detalle-descripcion">
-                        {{ pais.descripcion }}
-                    </p>
-                {% endif %}
             </header>
 
             <section class="gastronomia-pais">
@@ -76,39 +71,53 @@
 
                     {% for plato in pais.platos.all %}
 
-                        <a href="{% url 'detalle_plato' plato.id %}" class="plato-card">
+                        <article class="plato-card">
 
-                            {% if plato.imagen %}
+                            <a href="{% url 'detalle_plato' plato.id %}"
+                               class="plato-enlace-imagen"
+                               aria-label="Ver el plato {{ plato.nombre }}">
                                 <div class="plato-imagen-contenedor">
-                                    <img src="{{ plato.imagen.url }}"
+                                    <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
                                          alt="{{ plato.nombre }}"
                                          class="plato-imagen">
                                 </div>
-                            {% endif %}
+                            </a>
 
                             <div class="plato-contenido">
 
                                 <span class="plato-numero">Especialidad</span>
 
-                                <h3>★ {{ plato.nombre }} ★</h3>
+                                <h3>
+                                    <a href="{% url 'detalle_plato' plato.id %}"
+                                       class="plato-titulo-enlace">
+                                        ★ {{ plato.nombre }} ★
+                                    </a>
+                                </h3>
 
                                 {% if plato.descripcion %}
                                     <p>{{ plato.descripcion }}</p>
                                 {% endif %}
 
-                                {% if plato.peliculas.exists %}
+                                <a href="{% url 'detalle_plato' plato.id %}"
+                                   class="plato-enlace">Ver plato</a>
+
+                                {% if plato.peliculas.all %}
                                     <div class="plato-peliculas">
                                         <span>Películas</span>
 
                                         {% for pelicula in plato.peliculas.all %}
-                                            <p>{{ pelicula.titulo }}</p>
+                                            <p>
+                                                <a href="{% url 'detalle_pelicula' pelicula.id %}">
+                                                    {{ pelicula.titulo }}
+                                                </a>
+                                            </p>
                                         {% endfor %}
                                     </div>
                                 {% endif %}
 
                             </div>
 
-                        </a>
+                        </article>
 
                     {% empty %}
                         <p>Todavía no hay platos asociados a este país.</p>

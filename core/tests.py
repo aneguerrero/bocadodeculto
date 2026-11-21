@@ -1,5 +1,3 @@
-from decimal import Decimal
-
 from django.test import TestCase
 from django.urls import reverse
 
@@ -15,19 +13,16 @@ class CatalogPagesTests(TestCase):
         cls.plato_a = Plato.objects.create(
             nombre="Pasta de prueba",
             descripcion="Una pasta para comprobar las fichas del catálogo.",
-            precio=Decimal("12.50"),
             pais_origen=cls.pais_a,
         )
         cls.plato_b = Plato.objects.create(
             nombre="Pizza de prueba",
             descripcion="Una pizza para comprobar la selección de portada.",
-            precio=Decimal("10.00"),
             pais_origen=cls.pais_a,
         )
         cls.plato_c = Plato.objects.create(
             nombre="Ramen de prueba",
             descripcion="Un ramen para el segundo país.",
-            precio=Decimal("13.00"),
             pais_origen=cls.pais_b,
         )
 
@@ -65,22 +60,57 @@ class CatalogPagesTests(TestCase):
     def test_home_selects_one_dish_per_country_and_prioritizes_film_count(self):
         response = self.client.get(reverse("portada"))
         self.assertEqual(response.status_code, 200)
+
         selected = response.context["platos_destacados"]
         self.assertEqual(len(selected), 2)
         selected_names = {plato.nombre for plato in selected}
         self.assertEqual(selected_names, {"Pasta de prueba", "Ramen de prueba"})
 
+    def test_country_list_uses_database_and_extends_base_template(self):
+        pais_nuevo = Pais.objects.create(nombre="Perú")
+
+        response = self.client.get(reverse("lista_paises"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Perú")
+        self.assertContains(
+            response,
+            f'href="{reverse("detalle_pais", args=[pais_nuevo.pk])}"',
+        )
+        self.assertContains(response, "3 SELLOS")
+        self.assertContains(response, "/static/css/base.css")
+        self.assertContains(response, "/static/css/paises.css")
+        self.assertContains(response, 'class="footer-contenido"')
+        self.assertContains(response, "/static/images/sello.png")
+
     def test_related_links_connect_dishes_countries_and_films(self):
-        dish_response = self.client.get(reverse("detalle_plato", args=[self.plato_a.pk]))
-        country_response = self.client.get(reverse("detalle_pais", args=[self.pais_a.pk]))
-        movie_response = self.client.get(reverse("detalle_pelicula", args=[self.pelicula_a.pk]))
+        dish_list_response = self.client.get(reverse("lista_platos"))
+        movie_list_response = self.client.get(reverse("lista_peliculas"))
+        dish_response = self.client.get(
+            reverse("detalle_plato", args=[self.plato_a.pk])
+        )
+        country_response = self.client.get(
+            reverse("detalle_pais", args=[self.pais_a.pk])
+        )
+        movie_response = self.client.get(
+            reverse("detalle_pelicula", args=[self.pelicula_a.pk])
+        )
 
-        self.assertContains(dish_response, reverse("detalle_pais", args=[self.pais_a.pk]))
-        self.assertContains(dish_response, reverse("detalle_pelicula", args=[self.pelicula_a.pk]))
-        self.assertContains(country_response, reverse("detalle_plato", args=[self.plato_a.pk]))
-        self.assertContains(movie_response, reverse("detalle_plato", args=[self.plato_a.pk]))
+        country_url = reverse("detalle_pais", args=[self.pais_a.pk])
+        movie_url = reverse("detalle_pelicula", args=[self.pelicula_a.pk])
+        dish_url = reverse("detalle_plato", args=[self.plato_a.pk])
 
-    def test_template_stylesheets_are_linked(self):
+        self.assertContains(dish_list_response, dish_url)
+        self.assertContains(dish_list_response, country_url)
+        self.assertContains(movie_list_response, movie_url)
+        self.assertContains(dish_response, country_url)
+        self.assertContains(dish_response, movie_url)
+        self.assertContains(country_response, dish_url)
+        self.assertContains(country_response, movie_url)
+        self.assertContains(movie_response, country_url)
+        self.assertContains(movie_response, dish_url)
+
+    def test_stylesheets_are_linked_from_the_shared_template(self):
         response = self.client.get(reverse("lista_platos"))
         self.assertContains(response, "/static/css/base.css")
         self.assertContains(response, "/static/css/platos.css")

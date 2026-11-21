@@ -51,9 +51,11 @@
 }
 
 .plato-caja {
+    box-sizing: border-box;
+    min-width: 0;
     min-height: 280px;
     padding: 7px;
-    display: block;
+    display: flex;
     background-color: #813b35;
     border: 3px solid #68462e;
     box-shadow: 3px 4px 7px rgba(48, 34, 24, 0.3);
@@ -78,8 +80,10 @@
 }
 
 .plato-tarjeta {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
     min-height: 266px;
-    height: 100%;
     padding: 20px 15px;
     border: 2px solid var(--oro);
     background-color: var(--crema);
@@ -112,13 +116,17 @@
     font-family: "tomato";
     font-size: 25px;
     font-weight: normal;
+    line-height: 1.15;
+    overflow-wrap: break-word;
 }
 
 .plato-pais {
     margin: 12px 0 0;
     color: var(--marron);
-    font-family: "Lora", serif;
-    font-size: 16px;
+    font-family: "Lora", Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.35;
 }
 
 .plato-num-peliculas {
@@ -237,7 +245,7 @@
 
 .plato-dato a:hover {
     color: var(--rojoCL);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .plato-descripcion {
@@ -339,4 +347,27 @@
     .plato-tarjeta h2 {
         font-size: 20px;
     }
+}
+/* Enlaces independientes para navegar al plato y a su país de origen. */
+.plato-enlace-detalle {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.plato-pais:hover {
+    color: var(--rojoCL);
+    text-decoration: none;
+}
+
+
+/* En la ficha del plato, los enlaces a películas conservan el estilo de botón azul. */
+.plato-peliculas a.plato-pelicula {
+    color: var(--crema);
+    text-decoration: none;
+}
+
+.plato-peliculas a.plato-pelicula:hover {
+    color: var(--negro);
+    text-decoration: none;
 }

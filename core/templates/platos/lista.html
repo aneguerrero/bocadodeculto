@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -22,22 +21,23 @@
     <p>Conoce los platos de la gran pantalla</p>
 </div>
 
-<section class="recetario-estanteria" id="recetario">
+<div class="recetario-estanteria" id="recetario">
     <div class="platos-estanteria">
         {% for plato in platos %}
-            <a href="{% url 'detalle_plato' plato.id %}" class="plato-caja">
+            <article class="plato-caja">
                 <div class="plato-tarjeta">
+                    <a class="plato-enlace-detalle" href="{% url 'detalle_plato' plato.id %}">
+                        <div class="plato-imagen">
+                            <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
+                                 alt="{{ plato.nombre }}">
+                        </div>
+                        <h2>{{ plato.nombre }}</h2>
+                    </a>
 
-                    <div class="plato-imagen">
-                        <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
-                             alt="{{ plato.nombre }}">
-                    </div>
-
-                    <h2>{{ plato.nombre }}</h2>
-
-                    <p class="plato-pais">
+                    <a class="plato-pais"
+                       href="{% url 'detalle_pais' plato.pais_origen.id %}">
                         {{ plato.pais_origen.nombre }}
-                    </p>
+                    </a>
 
                     <p class="plato-num-peliculas">
                         {% if plato.num_peliculas == 1 %}
@@ -46,11 +46,12 @@
                             {{ plato.num_peliculas }} películas relacionadas
                         {% endif %}
                     </p>
-
                 </div>
-            </a>
+            </article>
+        {% empty %}
+            <p class="sin-platos">Todavía no hay platos registrados.</p>
         {% endfor %}
     </div>
-</section>
+</div>
 
 {% endblock %}

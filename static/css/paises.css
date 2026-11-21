@@ -770,3 +770,24 @@
     letter-spacing: 1px;
 
 }
+/* Enlaces de navegación entre las fichas relacionadas. */
+.plato-titulo-enlace,
+.plato-peliculas a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.plato-titulo-enlace:hover,
+.plato-peliculas a:hover {
+    color: var(--rojoCL);
+    text-decoration: none;
+}
+
+.plato-enlace-imagen {
+    display: block;
+    overflow: hidden;
+}
+
+.plato-peliculas a {
+    color: var(--marron);
+}
