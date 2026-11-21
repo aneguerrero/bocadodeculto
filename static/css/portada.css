@@ -80,6 +80,18 @@
     transform: scale(0.85);
 }
 
+.platos-menu-grid .plato-menu-card a {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.platos-menu-grid .plato-menu-card a:focus-visible {
+    outline: 3px solid currentColor;
+    outline-offset: 6px;
+    border-radius: 8px;
+}
+
 .platos-menu-grid .plato-menu-card img {
     width: 100% !important;
     height: auto !important;

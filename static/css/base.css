@@ -51,6 +51,19 @@
 /*************************************************************/
 
 /*BODY*/
+/* Los enlaces mantienen el estilo visual de la web sin subrayados. */
+a,
+a:hover,
+a:focus-visible,
+a:active {
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--oro);
+    outline-offset: 3px;
+}
+
 body {
     margin: 0;
     padding-top: 104px;
