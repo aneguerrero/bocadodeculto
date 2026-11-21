@@ -1,2 +1,4 @@
+credenciales para entrar a admin
+
 usuario: admin
 contraseña: iwebbi10
