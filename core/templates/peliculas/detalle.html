@@ -49,7 +49,9 @@
                 <span>PAÍS</span>
                 <p>
                     {% if pelicula.pais %}
-                        {{ pelicula.pais.nombre }}
+                        <a href="{% url 'detalle_pais' pelicula.pais.id %}">
+                            {{ pelicula.pais.nombre }}
+                        </a>
                     {% else %}
                         No especificado
                     {% endif %}
