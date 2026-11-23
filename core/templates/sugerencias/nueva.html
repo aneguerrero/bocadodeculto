@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block contenido %}
+  <h1>{% translate "Sugerir una película" %}</h1>
+  <p>{% translate "Plato" %}: <strong>{{ plato.nombre }}</strong></p>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{% translate "Enviar sugerencia" %}</button>
+  </form>
+
+  <p><a href="{% url 'detalle_plato' plato.id %}">
+    {% translate "Volver al plato" %}
+  </a></p>
+{% endblock %}

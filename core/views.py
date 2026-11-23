@@ -3,6 +3,11 @@ from django.db.models import Count, Prefetch
 from django.shortcuts import get_object_or_404, render
 from django.utils.text import slugify
 
+from django.contrib import messages
+from django.shortcuts import redirect
+from django.utils.translation import gettext as _
+from .forms import SugerenciaForm
+
 from .models import Pais, Pelicula, Plato
 
 
@@ -106,3 +111,19 @@ def detalle_pelicula(request, id):
         id=id,
     )
     return render(request, "peliculas/detalle.html", {"pelicula": pelicula})
+
+
+def sugerir_pelicula(request, id):
+    plato = get_object_or_404(Plato, pk=id)
+    datos = request.POST if request.method == "POST" else None
+    form = SugerenciaForm(datos)
+    if request.method == "POST" and form.is_valid():
+        propuesta = form.save(commit=False)
+        propuesta.plato = plato
+        propuesta.save()
+        messages.success(request, _("Sugerencia guardada."))
+        return redirect("detalle_plato", id=plato.pk)
+    return render(request, "sugerencias/nueva.html", {
+        "plato": plato,
+        "form": form,
+    })

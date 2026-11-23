@@ -35,3 +35,14 @@ class Pelicula(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+
+class Sugerencia(models.Model):
+    plato = models.ForeignKey(
+        Plato, on_delete=models.CASCADE, related_name="sugerencias"
+    )
+    titulo_pelicula = models.CharField(max_length=150)
+    comentario = models.TextField(blank=True)
+
+    def __str__(self):
+        return f"{self.titulo_pelicula} ({self.plato})"
