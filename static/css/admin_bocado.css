@@ -1,0 +1,13 @@
+#header {
+    background: #612436;
+    color: #fff;
+    border-bottom: 4px solid #d7a64b;
+  }
+  
+  #site-name a, #header a {
+    color: #fff;
+  }
+  
+  .module h2, .module caption {
+    background: #612436;
+  }

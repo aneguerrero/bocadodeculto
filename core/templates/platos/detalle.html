@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/platos.css' %}">
@@ -20,6 +20,14 @@
 <span class="separador-ruta"> / </span>
 
 <span class="pais-actual">{{ plato.nombre }}</span>
+
+{% if messages %}
+  {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
+{% endif %}
+
+<p><a href="{% url 'sugerir_pelicula' plato.id %}">
+  {% translate "Sugerir una película" %}
+</a></p>
 
 <section class="plato-detalle">
 
