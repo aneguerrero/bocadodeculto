@@ -1,0 +1,25 @@
+{% load static i18n catalogo_idioma %}
+{% for plato in platos %}
+    <article class="plato-caja">
+        <div class="plato-tarjeta">
+            <a class="plato-enlace-detalle" href="{% url 'detalle_plato' plato.id %}">
+                <div class="plato-imagen">
+                    <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
+                         alt="{{ plato.nombre|catalogo }}">
+                </div>
+                <h2>{{ plato.nombre|catalogo }}</h2>
+            </a>
+
+            <a class="plato-pais"
+               href="{% url 'detalle_pais' plato.pais_origen.id %}">
+                {{ plato.pais_origen.nombre|catalogo }}
+            </a>
+
+            <p class="plato-num-peliculas">
+                {% translate "Películas relacionadas" %}: {{ plato.num_peliculas }}
+            </p>
+        </div>
+    </article>
+{% empty %}
+    <p class="sin-platos">{% translate "No hay platos para esta búsqueda." %}</p>
+{% endfor %}

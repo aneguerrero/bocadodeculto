@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/platos.css' %}">
@@ -11,47 +11,31 @@
 <div class="recetario-encabezado">
     <div>
         <h1>
-            <span>Nuestro</span>
+            <span>{% translate "Nuestro" %}</span>
             <img src="{% static 'images/recetario.png' %}"
-                 alt="Recetario"
+                 alt=""
                  class="icono-recetario">
-            <span>Recetario</span>
+            <span>{% translate "recetario" %}</span>
         </h1>
     </div>
-    <p>Conoce los platos de la gran pantalla</p>
+    <p>{% translate "Conoce los platos de la gran pantalla" %}</p>
 </div>
+
+<form id="buscar" role="search" method="get" action="{% url 'lista_platos' %}">
+    <label for="q">{% translate "Buscar plato" %}</label>
+    <div class="buscar-controles">
+        <input id="q" name="q" type="search" value="{{ q }}" placeholder="{% translate 'Escribe un nombre…' %}">
+        <button type="submit">{% translate "Buscar" %}</button>
+        <a id="limpiar" href="{% url 'lista_platos' %}">{% translate "Limpiar" %}</a>
+    </div>
+</form>
 
 <div class="recetario-estanteria" id="recetario">
-    <div class="platos-estanteria">
-        {% for plato in platos %}
-            <article class="plato-caja">
-                <div class="plato-tarjeta">
-                    <a class="plato-enlace-detalle" href="{% url 'detalle_plato' plato.id %}">
-                        <div class="plato-imagen">
-                            <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
-                                 alt="{{ plato.nombre }}">
-                        </div>
-                        <h2>{{ plato.nombre }}</h2>
-                    </a>
-
-                    <a class="plato-pais"
-                       href="{% url 'detalle_pais' plato.pais_origen.id %}">
-                        {{ plato.pais_origen.nombre }}
-                    </a>
-
-                    <p class="plato-num-peliculas">
-                        {% if plato.num_peliculas == 1 %}
-                            1 película relacionada
-                        {% else %}
-                            {{ plato.num_peliculas }} películas relacionadas
-                        {% endif %}
-                    </p>
-                </div>
-            </article>
-        {% empty %}
-            <p class="sin-platos">Todavía no hay platos registrados.</p>
-        {% endfor %}
+    <div class="platos-estanteria" id="resultados" aria-live="polite">
+        {% include "platos/_tarjetas.html" %}
     </div>
 </div>
+
+<script defer src="{% static 'js/buscador-platos.js' %}"></script>
 
 {% endblock %}

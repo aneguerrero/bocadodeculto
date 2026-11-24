@@ -1,0 +1,22 @@
+{% load i18n %}
+{% get_available_languages as idiomas %}
+<div class="selector-idioma" role="group" aria-label="{% translate 'Idioma' %}">
+    <span class="idioma-etiqueta">{% translate "Idioma" %}</span>
+    {% for codigo, nombre in idiomas %}
+        <form action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="language" value="{{ codigo }}">
+            {% language codigo %}
+                {% with ruta=request.resolver_match %}
+                    {% if ruta.kwargs.id %}
+                        {% url ruta.url_name ruta.kwargs.id as destino %}
+                    {% else %}
+                        {% url ruta.url_name as destino %}
+                    {% endif %}
+                    <input type="hidden" name="next" value="{{ destino }}{% if request.GET %}?{{ request.GET.urlencode }}{% endif %}">
+                {% endwith %}
+            {% endlanguage %}
+            <button type="submit" lang="{{ codigo }}" aria-pressed="{% if codigo == idioma %}true{% else %}false{% endif %}"><span class="idioma-codigo">{{ codigo|upper }}</span> {% if codigo == "es" %}Castellano{% elif codigo == "en" %}English{% else %}{{ nombre }}{% endif %}</button>
+        </form>
+    {% endfor %}
+</div>

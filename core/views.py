@@ -2,6 +2,13 @@ from django.contrib.staticfiles import finders
 from django.db.models import Count, Prefetch
 from django.shortcuts import get_object_or_404, render
 from django.utils.text import slugify
+from django.views.decorators.vary import vary_on_headers
+
+from django.contrib import messages
+from django.shortcuts import redirect
+from django.utils.translation import gettext as _
+from .forms import SugerenciaForm
+from .catalogo_i18n import filtrar_catalogo
 
 from .models import Pais, Pelicula, Plato
 
@@ -40,13 +47,19 @@ def portada(request):
     )
 
 
+@vary_on_headers("X-Requested-With")
 def lista_platos(request):
+    q = request.GET.get("q", "").strip()
     platos = (
         Plato.objects.select_related("pais_origen")
         .annotate(num_peliculas=Count("peliculas", distinct=True))
         .order_by("nombre")
     )
-    return render(request, "platos/lista.html", {"platos": platos})
+    if q:
+        platos = filtrar_catalogo(platos, "nombre", q)
+    parcial = request.headers.get("X-Requested-With") == "XMLHttpRequest"
+    plantilla = "platos/_tarjetas.html" if parcial else "platos/lista.html"
+    return render(request, plantilla, {"platos": platos, "q": q})
 
 
 def detalle_plato(request, id):
@@ -59,13 +72,16 @@ def detalle_plato(request, id):
     return render(request, "platos/detalle.html", {"plato": plato})
 
 
+@vary_on_headers("X-Requested-With")
 def lista_paises(request):
-    paises = list(
-        Pais.objects.annotate(
-            num_platos=Count("platos", distinct=True),
-            num_peliculas=Count("peliculas", distinct=True),
-        ).order_by("nombre")
-    )
+    q = request.GET.get("q", "").strip()
+    paises = Pais.objects.annotate(
+        num_platos=Count("platos", distinct=True),
+        num_peliculas=Count("peliculas", distinct=True),
+    ).order_by("nombre")
+    if q:
+        paises = filtrar_catalogo(paises, "nombre", q)
+    paises = list(paises)
 
     # Conserva los sellos ilustrados del catálogo y usa uno genérico para
     # países nuevos que todavía no tengan una imagen propia.
@@ -73,7 +89,9 @@ def lista_paises(request):
         sello = f"images/sellos/sello-{slugify(pais.nombre)}.jpg"
         pais.imagen_sello = sello if finders.find(sello) else "images/sello.png"
 
-    return render(request, "paises/lista.html", {"paises": paises})
+    parcial = request.headers.get("X-Requested-With") == "XMLHttpRequest"
+    plantilla = "paises/_tarjetas.html" if parcial else "paises/lista.html"
+    return render(request, plantilla, {"paises": paises, "q": q})
 
 
 def detalle_pais(request, id):
@@ -89,13 +107,19 @@ def detalle_pais(request, id):
     return render(request, "paises/detalle.html", {"pais": pais})
 
 
+@vary_on_headers("X-Requested-With")
 def lista_peliculas(request):
+    q = request.GET.get("q", "").strip()
     peliculas = (
         Pelicula.objects.select_related("pais")
         .annotate(num_platos=Count("platos_maridados", distinct=True))
         .order_by("titulo")
     )
-    return render(request, "peliculas/lista.html", {"peliculas": peliculas})
+    if q:
+        peliculas = filtrar_catalogo(peliculas, "titulo", q)
+    parcial = request.headers.get("X-Requested-With") == "XMLHttpRequest"
+    plantilla = "peliculas/_tarjetas.html" if parcial else "peliculas/lista.html"
+    return render(request, plantilla, {"peliculas": peliculas, "q": q})
 
 
 def detalle_pelicula(request, id):
@@ -106,3 +130,19 @@ def detalle_pelicula(request, id):
         id=id,
     )
     return render(request, "peliculas/detalle.html", {"pelicula": pelicula})
+
+
+def sugerir_pelicula(request, id):
+    plato = get_object_or_404(Plato, pk=id)
+    datos = request.POST if request.method == "POST" else None
+    form = SugerenciaForm(datos)
+    if request.method == "POST" and form.is_valid():
+        propuesta = form.save(commit=False)
+        propuesta.plato = plato
+        propuesta.save()
+        messages.success(request, _("Sugerencia guardada."))
+        return redirect("detalle_plato", id=plato.pk)
+    return render(request, "sugerencias/nueva.html", {
+        "plato": plato,
+        "form": form,
+    })

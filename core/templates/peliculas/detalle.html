@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n catalogo_idioma %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/pelis.css' %}">
@@ -14,46 +14,54 @@
 <br>
 
 <a href="{% url 'lista_peliculas' %}#videoclub" class="volver-pasaporte">
-    PELÍCULAS
+    {% translate "PELÍCULAS" %}
 </a>
 
 <span class="separador-ruta"> / </span>
 
 <span class="pais-actual">
-    {{ pelicula.titulo }}
+    {{ pelicula.titulo|catalogo }}
 </span>
+
+{% if messages %}
+  {% for message in messages %}<p class="sugerencia-aviso" role="status">{{ message }}</p>{% endfor %}
+{% endif %}
+
+<p><a href="{% url 'sugerir_plato' pelicula.id %}" class="btn-sugerir">
+    {% translate "Sugerir un plato" %}
+</a></p>
 
 <section class="pelicula-detalle">
 
     <div class="detalle-portada">
         <div class="detalle-portada-marco">
             <img src="{% static 'images/portadas/' %}{{ pelicula.titulo|slugify }}.jpg"
-                 alt="{{ pelicula.titulo }}">
+                 alt="{{ pelicula.titulo|catalogo }}">
         </div>
     </div>
 
     <div class="detalle-informacion">
 
         <header class="detalle-header">
-            <h1>{{ pelicula.titulo }}</h1>
+            <h1>{{ pelicula.titulo|catalogo }}</h1>
         </header>
 
         <div class="detalle-ficha">
 
             <div class="detalle-dato">
-                <span>DIRECTOR</span>
+                <span>{% translate "DIRECTOR" %}</span>
                 <p>{{ pelicula.director }}</p>
             </div>
 
             <div class="detalle-dato">
-                <span>PAÍS</span>
+                <span>{% translate "PAÍS" %}</span>
                 <p>
                     {% if pelicula.pais %}
                         <a href="{% url 'detalle_pais' pelicula.pais.id %}">
-                            {{ pelicula.pais.nombre }}
+                            {{ pelicula.pais.nombre|catalogo }}
                         </a>
                     {% else %}
-                        No especificado
+                        {% translate "No especificado" %}
                     {% endif %}
                 </p>
             </div>
@@ -61,27 +69,27 @@
         </div>
 
         <section class="detalle-descripcion">
-            <h2>Sinopsis</h2>
+            <h2>{% translate "Sinopsis" %}</h2>
 
             {% if pelicula.sinopsis %}
-                <p>{{ pelicula.sinopsis }}</p>
+                <p>{{ pelicula.sinopsis|catalogo }}</p>
             {% else %}
-                <p>Sin sinopsis disponible.</p>
+                <p>{% translate "Sin sinopsis disponible." %}</p>
             {% endif %}
         </section>
 
         <section class="detalle-gastronomia">
-            <h2>Platos de la película</h2>
+            <h2>{% translate "Platos de la película" %}</h2>
 
             <div class="detalle-platos">
                 {% for plato in pelicula.platos_maridados.all %}
                     <a href="{% url 'detalle_plato' plato.id %}"
                        class="detalle-plato">
-                        {{ plato.nombre }}
+                        {{ plato.nombre|catalogo }}
                     </a>
                 {% empty %}
                     <p class="detalle-sin-platos">
-                        Todavía no hay platos relacionados con esta película.
+                        {% translate "Todavía no hay platos relacionados con esta película." %}
                     </p>
                 {% endfor %}
             </div>

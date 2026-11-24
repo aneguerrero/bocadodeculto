@@ -1,4 +1,3 @@
-
 /*PALETA DE COLORES*/
 :root {
     --negro: #261b1b;
@@ -51,19 +50,6 @@
 /*************************************************************/
 
 /*BODY*/
-/* Los enlaces mantienen el estilo visual de la web sin subrayados. */
-a,
-a:hover,
-a:focus-visible,
-a:active {
-    text-decoration: none;
-}
-
-a:focus-visible {
-    outline: 2px solid var(--oro);
-    outline-offset: 3px;
-}
-
 body {
     margin: 0;
     padding-top: 104px;
@@ -216,6 +202,24 @@ body::before {
     background-image: url("../images/ticket-pelis.png");
 }
 
+/*tickets en ingles pngs*/
+html[lang="en"] .ticket-inicio {
+    background-image: url("../images/ticket-start.png");
+}
+
+html[lang="en"] .ticket-platos {
+    background-image: url("../images/ticket-dishes.png");
+}
+
+html[lang="en"] .ticket-paises {
+    background-image: url("../images/ticket-countries.png");
+}
+
+html[lang="en"] .ticket-peliculas {
+    background-image: url("../images/ticket-films.png");
+}
+
+
 .ticket-inicio:hover,
 .ticket-inicio:focus-visible {
     transform: rotate(-2deg) translateY(-8px);
@@ -325,7 +329,7 @@ body::before {
    .footer-contenido p {
        text-align: center;
    }
-   
+
    /*indice del footer*/
    .footer-links {
        display: flex;
@@ -368,3 +372,326 @@ body::before {
        letter-spacing: 0.04em;
        opacity: 0.75;
    }
+
+
+   .btn-sugerir {
+    display: inline-block;
+    background-color: #612436;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 2px solid #612436;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .btn-sugerir:hover {
+    background-color: #4a1a28;
+    border-color: #d7a64b;
+    color: #fff;
+  }
+
+/* Selector de idioma y buscadores: estética de tickets y carta del restaurante. */
+.selector-idioma {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .55rem;
+    position: relative;
+    z-index: 2;
+    margin: 115px auto 0;
+    padding: 0 .8rem;
+    font-family: Georgia, serif;
+}
+.selector-idioma form { margin: 0; }
+.idioma-etiqueta {
+    color: var(--rojoOS);
+    background: var(--crema);
+    padding: .25rem .5rem;
+    font-weight: bold;
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+}
+.selector-idioma + .indice { margin-top: 0; padding-top: 10px; }
+.selector-idioma button,
+#buscar button, #buscar #limpiar {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    min-height: 44px;
+    padding: .55rem .95rem;
+    border: 2px solid var(--rojoOS);
+    border-radius: 3px;
+    background: var(--crema) url("../images/textura-menu.jpg") repeat;
+    color: var(--rojoOS);
+    font: 700 1rem Georgia, serif;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 2px 3px 0 rgba(38, 27, 27, .22);
+    transition: background-color .15s ease, color .15s ease, transform .15s ease;
+}
+.selector-idioma button { outline: 1px dashed var(--rojo); outline-offset: -5px; }
+.idioma-codigo { font-size: .75rem; letter-spacing: .07em; }
+.selector-idioma button[aria-pressed="true"], #buscar button {
+    background: var(--rojoOS);
+    color: var(--crema);
+    border-color: var(--rojoOS);
+    outline: 1px dashed var(--oro);
+    outline-offset: -5px;
+}
+.selector-idioma button:hover, #buscar button:hover, #buscar #limpiar:hover {
+    transform: translateY(-2px);
+    background: var(--rojo);
+    color: var(--crema);
+    border-color: var(--rojoOS);
+}
+.selector-idioma button:focus-visible, #buscar button:focus-visible,
+#buscar #limpiar:focus-visible, #buscar input:focus-visible,
+html[lang="en"] .indice-link:focus-visible {
+    outline: 3px solid var(--azulOS);
+    outline-offset: 3px;
+}
+/* Etiquetas accesibles del menú: las imágenes contienen el texto visible. */
+.ticket-etiqueta {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+#buscar {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .6rem;
+    width: min(100%, 640px);
+    margin: 0 auto 1.5rem;
+    padding: .85rem 1rem 1rem;
+    background: var(--crema) url("../images/textura-menu.jpg") repeat;
+    border: 3px double var(--rojo);
+    box-shadow: 3px 4px 0 rgba(104, 54, 35, .15);
+}
+#buscar label {
+    font: 700 1.1rem Georgia, serif;
+    color: var(--rojoOS);
+    text-align: center;
+}
+.buscar-controles {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    gap: .55rem;
+    width: 100%;
+}
+#buscar input {
+    box-sizing: border-box;
+    flex: 1 1 13rem;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 44px;
+    padding: .6rem .8rem;
+    border: 2px solid var(--marron);
+    border-radius: 3px;
+    font: 1rem Georgia, serif;
+    color: var(--negro);
+    background: var(--crema);
+}
+#buscar input::placeholder { color: var(--marron); }
+#resultados .sin-platos,
+#resultados .sin-peliculas,
+#resultados .sin-paises {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--rojoOS);
+    font: 1.1rem Georgia, serif;
+}
+/* Los carteles originales no se alteran: en inglés muestran su título traducido. */
+html[lang="en"] .pelicula-caja {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+html[lang="en"] .pelicula-caja .pelicula-imagen { height: 280px; }
+.pelicula-titulo-idioma {
+    display: block;
+    padding: .5rem .35rem;
+    background: var(--crema);
+    color: var(--rojoOS);
+    text-align: center;
+    font: 700 .95rem Georgia, serif;
+}
+@media (max-width: 650px) {
+    #buscar { padding: .7rem; }
+    #buscar input { flex-basis: 100%; }
+    #buscar button, #buscar #limpiar { flex: 1 1 auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .selector-idioma button, #buscar button, #buscar #limpiar { transition: none; }
+}
+
+/* Encabezados en inglés: separadores centrados y texto sin recortes. */
+html[lang="en"] #contenido :is(.platos-encabezado, .mapa-encabezado,
+    .videoclub-encabezado, .pasaporte-titulo) h1 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(44px, 12vw, 130px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(4px, 1vw, 14px);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: .15em 0;
+    box-sizing: border-box;
+    font-size: clamp(1.1rem, 3.3vw, 2.7rem);
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+html[lang="en"] #contenido :is(.platos-encabezado, .mapa-encabezado,
+    .videoclub-encabezado, .pasaporte-titulo) h1 > span {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+html[lang="en"] #contenido :is(.platos-encabezado, .mapa-encabezado,
+    .videoclub-encabezado, .pasaporte-titulo) h1 > span:first-child {
+    text-align: right;
+}
+
+html[lang="en"] #contenido :is(.platos-encabezado, .mapa-encabezado,
+    .videoclub-encabezado, .pasaporte-titulo) h1 > span:last-child {
+    text-align: left;
+}
+
+html[lang="en"] #contenido :is(.platos-encabezado, .mapa-encabezado,
+    .videoclub-encabezado, .pasaporte-titulo) h1 > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* Permite que los títulos de tarjetas y fichas ocupen varias líneas. */
+html[lang="en"] #contenido :is(h1, h2, h3, .pelicula-titulo-idioma) {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+html[lang="en"] #contenido :is(.plato-enlace-detalle, .detalle-informacion,
+    .plato-detalle > *, .pelicula-detalle > *, .detalle-dato, .sello-pais) {
+    min-width: 0;
+}
+
+html[lang="en"] #contenido .pelicula-titulo-idioma {
+    flex: 0 0 auto;
+    line-height: 1.4;
+}
+
+html[lang="en"] #contenido .pelicula-caja .pelicula-imagen {
+    flex: 0 0 280px;
+}
+
+html[lang="en"] #contenido :is(.plato-header, .detalle-header) h1 {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    line-height: 1.3;
+}
+
+html[lang="en"] #contenido :is(.pelicula-detalle, .plato-detalle) {
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+}
+
+/* Mantener el diseño legible también en pantallas estrechas. */
+@media (max-width: 700px) {
+    html[lang="en"] #contenido :is(.plato-detalle, .pelicula-detalle) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    html[lang="en"] #contenido .detalle-ficha {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    html[lang="en"] #contenido .pasaporte-contenedor {
+        padding-inline: 0;
+    }
+
+    html[lang="en"] #contenido .pasaporte {
+        padding-inline: 25px;
+    }
+
+    html[lang="en"] #contenido .pasaporte-titulo {
+        padding-inline: 0;
+    }
+
+    html[lang="en"] #contenido .sellos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    html[lang="en"] #contenido .imagen-sello {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+}
+
+/* Buscadores: mismo estilo en Platos, Países y Películas. */
+#contenido #buscar {
+    margin: 1.75rem auto 2.25rem;
+    padding: .25rem 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+}
+
+#contenido #buscar #limpiar {
+    background-image: none;
+}
+
+/* Recetario: libro centrado entre las dos partes del título. */
+:root[lang] #contenido .recetario-encabezado h1 {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(44px, 12vw, 130px) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(4px, 1vw, 14px);
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: .15em 0;
+    box-sizing: border-box;
+    font-size: clamp(1.1rem, 3.3vw, 2.7rem);
+    line-height: 1.3;
+    letter-spacing: 1px;
+}
+
+:root[lang] #contenido .recetario-encabezado h1 > span {
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+:root[lang] #contenido .recetario-encabezado h1 > span:first-child {
+    text-align: right;
+}
+
+:root[lang] #contenido .recetario-encabezado h1 > span:last-child {
+    text-align: left;
+}
+
+:root[lang] #contenido .recetario-encabezado h1 > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    margin: 0 auto;
+    object-fit: contain;
+}

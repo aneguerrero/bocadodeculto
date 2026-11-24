@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n catalogo_idioma %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/portada.css' %}">
@@ -12,14 +12,14 @@
     <div class="platos-encabezado">
         <div>
             <h1>
-                <span>Del cine</span>
+                <span>{% translate "Del cine" %}</span>
                 <img src="{% static 'images/cubiertoseparador.png' %}"
-                     alt="Cámara"
+                     alt="{% translate "Cámara" %}"
                      class="icono-cubiertos">
-                <span>al menú</span>
+                <span>{% translate "al menú" %}</span>
             </h1>
         </div>
-        <p>Nuestros platos protagonistas</p>
+        <p>{% translate "Nuestros platos protagonistas" %}</p>
     </div>
 
     <div class="carrusel">
@@ -31,18 +31,18 @@
         <div class="platos-menu-grid">
             <div class="plato-menu-card card1">
                 {% if plato_batido %}
-                    <a href="{% url 'detalle_plato' plato_batido.id %}" aria-label="Ver detalle de {{ plato_batido.nombre }}">
-                        <img src="{% static 'images/milkshake.png' %}" alt="{{ plato_batido.nombre }}">
+                    <a href="{% url 'detalle_plato' plato_batido.id %}" aria-label="{% blocktranslate with nombre=plato_batido.nombre|catalogo %}Ver detalle de {{ nombre }}{% endblocktranslate %}">
+                        <img src="{% static 'images/milkshake.png' %}" alt="{{ plato_batido.nombre|catalogo }}">
                     </a>
                 {% else %}
-                    <img src="{% static 'images/milkshake.png' %}" alt="Batido">
+                    <img src="{% static 'images/milkshake.png' %}" alt="{% translate "Batido" %}">
                 {% endif %}
             </div>
 
             <div class="plato-menu-card card2">
                 {% if plato_paella %}
-                    <a href="{% url 'detalle_plato' plato_paella.id %}" aria-label="Ver detalle de {{ plato_paella.nombre }}">
-                        <img src="{% static 'images/paella.png' %}" alt="{{ plato_paella.nombre }}">
+                    <a href="{% url 'detalle_plato' plato_paella.id %}" aria-label="{% blocktranslate with nombre=plato_paella.nombre|catalogo %}Ver detalle de {{ nombre }}{% endblocktranslate %}">
+                        <img src="{% static 'images/paella.png' %}" alt="{{ plato_paella.nombre|catalogo }}">
                     </a>
                 {% else %}
                     <img src="{% static 'images/paella.png' %}" alt="Paella">
@@ -51,8 +51,8 @@
 
             <div class="plato-menu-card card3">
                 {% if plato_ramen %}
-                    <a href="{% url 'detalle_plato' plato_ramen.id %}" aria-label="Ver detalle de {{ plato_ramen.nombre }}">
-                        <img src="{% static 'images/ramen.png' %}" alt="{{ plato_ramen.nombre }}">
+                    <a href="{% url 'detalle_plato' plato_ramen.id %}" aria-label="{% blocktranslate with nombre=plato_ramen.nombre|catalogo %}Ver detalle de {{ nombre }}{% endblocktranslate %}">
+                        <img src="{% static 'images/ramen.png' %}" alt="{{ plato_ramen.nombre|catalogo }}">
                     </a>
                 {% else %}
                     <img src="{% static 'images/ramen.png' %}" alt="Ramen">
@@ -104,19 +104,19 @@
     <div class="mapa-encabezado">
         <div>
             <h1>
-                <span>Un mundo</span>
+                <span>{% translate "Un mundo" %}</span>
                 <img src="{% static 'images/camara.png' %}"
-                     alt="Cámara"
+                     alt="{% translate "Cámara" %}"
                      class="icono-camara">
-                <span>de película</span>
+                <span>{% translate "de película" context "portada" %}</span>
             </h1>
         </div>
-        <p>Pasa el cursor por un país para descubrir sus platos destacados en el cine</p>
+        <p>{% translate "Pasa el cursor por un país para descubrir sus platos destacados en el cine" %}</p>
     </div>
 </section>
 
     <div class="mapa">
-        <img class="mapa-imagen" src="{% static 'images/mapamundo.jpg' %}" alt="Mapa del mundo con países interactivos">
+        <img class="mapa-imagen" src="{% static 'images/mapamundo.jpg' %}" alt="{% translate "Mapa del mundo con países interactivos" %}">
 
 		<!--marcadores, uno por país-->
         {% for plato in platos_destacados %}
@@ -155,25 +155,25 @@
                 {% endif %}
 
                     <button class="mapa-etiqueta" type="button">
-                        {{ plato.pais_origen.nombre }}
+                        {{ plato.pais_origen.nombre|catalogo }}
                     </button>
 
                     <div class="mapa-tarjeta">
 						<!--display del pais de plato-->
                         <span class="mapa-pais">
-                            {{ plato.pais_origen.nombre }}
+                            {{ plato.pais_origen.nombre|catalogo }}
                         </span>
 						<!--display de nom del plato-->	
                         <h2>
-                            {{ plato.nombre }}
+                            {{ plato.nombre|catalogo }}
                         </h2>
 						<!--display de desc-->
                         <p>
-                            {{ plato.descripcion|truncatewords:20 }}
+                            {{ plato.descripcion|catalogo|truncatewords:20 }}
                         </p>
 
                         <a href="{% url 'detalle_plato' plato.id %}">
-                            Ver plato →
+                            {% translate "Ver plato" %} →
                         </a>
                     </div>
                 </div>

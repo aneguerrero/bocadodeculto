@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n catalogo_idioma %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/paises.css' %}">
@@ -38,17 +38,17 @@
         <div class="detalle-pasaporte">
 
             <a href="{% url 'lista_paises' %}#paises" class="volver-pasaporte">
-                PAÍSES
+                {% translate "PAÍSES" %}
             </a>
 
             <span class="separador-ruta"> / </span>
 
             <span class="pais-actual">
-                {{ pais.nombre }}
+                {{ pais.nombre|catalogo }}
             </span>
 
             <header class="detalle-header">
-                <h1>{{ pais.nombre }}</h1>
+                <h1>{{ pais.nombre|catalogo }}</h1>
 
             </header>
 
@@ -58,12 +58,12 @@
                     <span class="avion-detalle">✈︎</span>
 
                     <div>
-                        <h2>Sabores del destino</h2>
-                        <p>Un viaje a través de su gastronomía</p>
+                        <h2>{% translate "Sabores del destino" %}</h2>
+                        <p>{% translate "Un viaje a través de su gastronomía" %}</p>
                     </div>
 
                     <span class="detalle-contador">
-                        {{ pais.platos.count }} PLATOS
+                        {{ pais.platos.count }} {% if pais.platos.count == 1 %}{% translate "PLATO" %}{% else %}{% translate "PLATOS" %}{% endif %}
                     </span>
                 </div>
 
@@ -75,40 +75,40 @@
 
                             <a href="{% url 'detalle_plato' plato.id %}"
                                class="plato-enlace-imagen"
-                               aria-label="Ver el plato {{ plato.nombre }}">
+                               aria-label="{% blocktranslate with nombre=plato.nombre|catalogo %}Ver el plato {{ nombre }}{% endblocktranslate %}">
                                 <div class="plato-imagen-contenedor">
                                     <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
-                                         alt="{{ plato.nombre }}"
+                                         alt="{{ plato.nombre|catalogo }}"
                                          class="plato-imagen">
                                 </div>
                             </a>
 
                             <div class="plato-contenido">
 
-                                <span class="plato-numero">Especialidad</span>
+                                <span class="plato-numero">{% translate "Especialidad" %}</span>
 
                                 <h3>
                                     <a href="{% url 'detalle_plato' plato.id %}"
                                        class="plato-titulo-enlace">
-                                        ★ {{ plato.nombre }} ★
+                                        ★ {{ plato.nombre|catalogo }} ★
                                     </a>
                                 </h3>
 
                                 {% if plato.descripcion %}
-                                    <p>{{ plato.descripcion }}</p>
+                                    <p>{{ plato.descripcion|catalogo }}</p>
                                 {% endif %}
 
                                 <a href="{% url 'detalle_plato' plato.id %}"
-                                   class="plato-enlace">Ver plato</a>
+                                   class="plato-enlace">{% translate "Ver plato" %}</a>
 
                                 {% if plato.peliculas.all %}
                                     <div class="plato-peliculas">
-                                        <span>Películas</span>
+                                        <span>{% translate "Películas" %}</span>
 
                                         {% for pelicula in plato.peliculas.all %}
                                             <p>
                                                 <a href="{% url 'detalle_pelicula' pelicula.id %}">
-                                                    {{ pelicula.titulo }}
+                                                    {{ pelicula.titulo|catalogo }}
                                                 </a>
                                             </p>
                                         {% endfor %}
@@ -120,7 +120,7 @@
                         </article>
 
                     {% empty %}
-                        <p>Todavía no hay platos asociados a este país.</p>
+                        <p>{% translate "Todavía no hay platos asociados a este país." %}</p>
                     {% endfor %}
 
                 </div>

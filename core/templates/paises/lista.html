@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/paises.css' %}">
@@ -38,39 +38,32 @@
         <header class="pasaporte-header">
             <div class="pasaporte-titulo">
                 <h1>
-                    <span>Pasaporte</span>
+                    <span>{% translate "Pasaporte" %}</span>
                     <img src="{% static 'images/sello.png' %}"
-                         alt="Sello"
+                         alt="{% translate "Sello" %}"
                          class="icono-sello">
-                    <span>Gastronómico</span>
+                    <span>{% translate "Gastronómico" %}</span>
                 </h1>
             </div>
         </header>
 
-        <div class="pasaporte-sellos">
-            <span class="unicode-avion">✈︎</span>
-            <div>
-                <h2>Mis destinos</h2>
-                <p>Selecciona un sello para comenzar tu viaje.</p>
+        <form id="buscar" role="search" method="get" action="{% url 'lista_paises' %}">
+            <label for="q">{% translate "Buscar país" %}</label>
+            <div class="buscar-controles">
+                <input id="q" name="q" type="search" value="{{ q }}" placeholder="{% translate 'Escribe un nombre…' %}">
+                <button type="submit">{% translate "Buscar" %}</button>
+                <a id="limpiar" href="{% url 'lista_paises' %}">{% translate "Limpiar" %}</a>
             </div>
-            <span class="num-sellos">{{ paises|length }} SELLOS</span>
-        </div>
+        </form>
 
-        <section class="sellos-grid" id="paises">
-            {% for pais in paises %}
-                <a class="sello-pais" href="{% url 'detalle_pais' pais.id %}">
-                    <img class="imagen-sello"
-                         src="{% static pais.imagen_sello %}"
-                         alt="Sello de {{ pais.nombre }}">
-                    <h3>{{ pais.nombre }}</h3>
-                </a>
-            {% empty %}
-                <p class="sin-paises">Todavía no hay países registrados.</p>
-            {% endfor %}
-        </section>
+        <div id="resultados" aria-live="polite">
+            {% include "paises/_tarjetas.html" %}
+        </div>
 
     </section>
 
 </div>
+
+<script defer src="{% static 'js/buscador-platos.js' %}"></script>
 
 {% endblock %}
