@@ -10,6 +10,11 @@ from django.utils.translation import gettext as _
 from .forms import SugerenciaForm
 from .catalogo_i18n import filtrar_catalogo
 
+from django.contrib import messages
+from django.shortcuts import redirect
+from django.utils.translation import gettext as _
+from .forms import SugerenciaForm
+
 from .models import Pais, Pelicula, Plato
 
 

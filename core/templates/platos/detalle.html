@@ -29,6 +29,14 @@
     {% translate "Sugerir una película" %}
   </a></p>
 
+{% if messages %}
+  {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
+{% endif %}
+
+<p><a href="{% url 'sugerir_pelicula' plato.id %}" class="btn-sugerir">
+    {% translate "Sugerir una película" %}
+  </a></p>
+
 <section class="plato-detalle">
 
     <div class="plato-portada">
