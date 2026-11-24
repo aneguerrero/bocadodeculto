@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static i18n %}
+{% load static i18n catalogo_idioma %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/platos.css' %}">
@@ -14,12 +14,20 @@
 <br>
 
 <a href="{% url 'lista_platos' %}#recetario" class="volver-pasaporte">
-    PLATOS
+    {% translate "PLATOS" %}
 </a>
 
 <span class="separador-ruta"> / </span>
 
-<span class="pais-actual">{{ plato.nombre }}</span>
+<span class="pais-actual">{{ plato.nombre|catalogo }}</span>
+
+{% if messages %}
+  {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
+{% endif %}
+
+<p><a href="{% url 'sugerir_pelicula' plato.id %}" class="btn-sugerir">
+    {% translate "Sugerir una película" %}
+  </a></p>
 
 {% if messages %}
   {% for message in messages %}<p role="status">{{ message }}</p>{% endfor %}
@@ -35,50 +43,50 @@
         <div class="plato-portada-marco">
             <div class="plato-portada-imagen">
                 <img src="{% static 'images/platos/' %}{{ plato.nombre|slugify }}.jpg"
-                     alt="{{ plato.nombre }}">
+                     alt="{{ plato.nombre|catalogo }}">
             </div>
-            <h2>{{ plato.nombre }}</h2>
+            <h2>{{ plato.nombre|catalogo }}</h2>
         </div>
     </div>
 
     <div class="plato-informacion">
 
         <header class="plato-header">
-            <h1>{{ plato.nombre }}</h1>
+            <h1>{{ plato.nombre|catalogo }}</h1>
         </header>
 
         <div class="plato-ficha">
             <div class="plato-dato">
-                <span>PAÍS DE ORIGEN</span>
+                <span>{% translate "PAÍS DE ORIGEN" %}</span>
                 <p>
                     <a href="{% url 'detalle_pais' plato.pais_origen.id %}">
-                        {{ plato.pais_origen.nombre }}
+                        {{ plato.pais_origen.nombre|catalogo }}
                     </a>
                 </p>
             </div>
         </div>
 
         <section class="plato-descripcion">
-            <h2>Sobre el plato</h2>
+            <h2>{% translate "Sobre el plato" %}</h2>
 
             {% if plato.descripcion %}
-                <p>{{ plato.descripcion }}</p>
+                <p>{{ plato.descripcion|catalogo }}</p>
             {% else %}
-                <p>Sin descripción disponible.</p>
+                <p>{% translate "Sin descripción disponible." %}</p>
             {% endif %}
         </section>
 
         <section class="plato-cine">
-            <h2>Películas en las que aparece</h2>
+            <h2>{% translate "Películas en las que aparece" %}</h2>
 
             <div class="plato-peliculas">
                 {% for pelicula in plato.peliculas.all %}
                     <a href="{% url 'detalle_pelicula' pelicula.id %}" class="plato-pelicula">
-                        {{ pelicula.titulo }}
+                        {{ pelicula.titulo|catalogo }}
                     </a>
                 {% empty %}
                     <p class="plato-sin-peliculas">
-                        Todavía no hay películas relacionadas con este plato.
+                        {% translate "Todavía no hay películas relacionadas con este plato." %}
                     </p>
                 {% endfor %}
             </div>

@@ -1,0 +1,300 @@
+# Traducciones al inglés de Bocado de Culto (E4).
+msgid ""
+msgstr ""
+"Project-Id-Version: Bocado de Culto E4\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-24 20:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "Batido"
+msgstr "Milkshake"
+
+msgid "Bocado de Culto: platos, países y películas que unen cine y gastronomía."
+msgstr "Bocado de Culto: dishes, countries and films bringing cinema and gastronomy together."
+
+#: core/templates/platos/lista.html:26
+msgid "Buscar"
+msgstr "Search"
+
+msgid "Buscar país"
+msgstr "Find a country"
+
+msgid "Buscar película"
+msgstr "Find a film"
+
+#: core/templates/platos/lista.html:24
+msgid "Buscar plato"
+msgstr "Find a dish"
+
+msgid "CSS válido"
+msgstr "Valid CSS"
+
+msgid "Claqueta"
+msgstr "Clapperboard"
+
+#: core/forms.py:12
+msgid "Comentario opcional"
+msgstr "Optional comment"
+
+#: core/templates/platos/lista.html:20
+msgid "Conoce los platos de la gran pantalla"
+msgstr "Discover dishes from the big screen"
+
+msgid "Cámara"
+msgstr "Camera"
+
+msgid "DIRECTOR"
+msgstr "DIRECTOR"
+
+msgid "Del cine"
+msgstr "From the screen"
+
+#: core/templates/sugerencias/nueva.html:11
+msgid "Enviar sugerencia"
+msgstr "Send suggestion"
+
+msgid "Escribe un nombre…"
+msgstr "Enter a name…"
+
+msgid "Escribe un título…"
+msgstr "Enter a title…"
+
+msgid "Especialidad"
+msgstr "Speciality"
+
+msgid "Gastronómico"
+msgstr "passport"
+
+msgid "HTML válido"
+msgstr "Valid HTML"
+
+#: core/templates/selector_idioma.html:3
+msgid "Idioma"
+msgstr "Language"
+
+#: core/templates/base.html:41 core/templates/base.html:72
+msgid "Inicio"
+msgstr "Home"
+
+#: core/templates/platos/lista.html:27
+msgid "Limpiar"
+msgstr "Clear"
+
+msgid "Mapa del mundo con países interactivos"
+msgstr "World map with interactive countries"
+
+#: core/templates/base.html:62
+msgid "Menú"
+msgstr "Menu"
+
+msgid "Mis destinos"
+msgstr "My destinations"
+
+msgid "No especificado"
+msgstr "Not specified"
+
+msgid "No hay países para esta búsqueda."
+msgstr "No countries match your search."
+
+msgid "No hay películas para esta búsqueda."
+msgstr "No films match your search."
+
+#: core/templates/platos/_tarjetas.html:24
+msgid "No hay platos para esta búsqueda."
+msgstr "No dishes match your search."
+
+msgid "Nuestra colección de cine con recetas icónicas"
+msgstr "Our collection of films with iconic recipes"
+
+#: core/templates/platos/lista.html:17
+msgid "Nuestro recetario"
+msgstr "Our recipe book"
+
+msgid "Nuestros platos protagonistas"
+msgstr "Our starring dishes"
+
+msgid "PAÍS"
+msgstr "COUNTRY"
+
+msgid "PAÍS DE ORIGEN"
+msgstr "COUNTRY OF ORIGIN"
+
+msgid "PAÍSES"
+msgstr "COUNTRIES"
+
+msgid "PELÍCULAS"
+msgstr "FILMS"
+
+msgid "PLATO"
+msgstr "DISH"
+
+msgid "PLATOS"
+msgstr "DISHES"
+
+msgid "Pasa el cursor por un país para descubrir sus platos destacados en el cine"
+msgstr "Hover over a country to discover its featured dishes from the cinema"
+
+msgid "Pasaporte"
+msgstr "Food"
+
+#: core/templates/base.html:49 core/templates/base.html:74
+msgid "Países"
+msgstr "Countries"
+
+#: core/templates/base.html:53 core/templates/base.html:75
+msgid "Películas"
+msgstr "Films"
+
+msgid "Películas en las que aparece"
+msgstr "Films featuring this dish"
+
+#: core/templates/platos/_tarjetas.html:19
+msgid "Películas relacionadas"
+msgstr "Related films"
+
+#: core/templates/sugerencias/nueva.html:6
+msgid "Plato"
+msgstr "Dish"
+
+#: core/templates/base.html:45 core/templates/base.html:73
+msgid "Platos"
+msgstr "Dishes"
+
+msgid "Platos de la película"
+msgstr "Dishes from the film"
+
+msgid "Proyecto web de cine y gastronomía"
+msgstr "A cinema and gastronomy web project"
+
+msgid "SELLO"
+msgstr "STAMP"
+
+msgid "SELLOS"
+msgstr "STAMPS"
+
+msgid "Sabores del destino"
+msgstr "Flavours of the destination"
+
+msgid "Selecciona un sello para comenzar tu viaje."
+msgstr "Select a stamp to start your journey."
+
+msgid "Sello"
+msgstr "Stamp"
+
+#, python-format
+msgid "Sello de %(nombre)s"
+msgstr "Stamp for %(nombre)s"
+
+msgid "Sin descripción disponible."
+msgstr "No description available."
+
+msgid "Sin sinopsis disponible."
+msgstr "No synopsis available."
+
+msgid "Sinopsis"
+msgstr "Synopsis"
+
+msgid "Sobre el plato"
+msgstr "About the dish"
+
+#: core/views.py:131
+msgid "Sugerencia guardada."
+msgstr "Suggestion saved."
+
+#: core/templates/platos/detalle.html:29 core/templates/sugerencias/nueva.html:5
+msgid "Sugerir una película"
+msgstr "Suggest a film"
+
+msgid "Todavía no hay países registrados."
+msgstr "There are no countries yet."
+
+msgid "Todavía no hay películas relacionadas con este plato."
+msgstr "There are no films related to this dish yet."
+
+msgid "Todavía no hay platos asociados a este país."
+msgstr "There are no dishes associated with this country yet."
+
+msgid "Todavía no hay platos relacionados con esta película."
+msgstr "There are no dishes related to this film yet."
+
+#: core/forms.py:11
+msgid "Título de la película"
+msgstr "Film title"
+
+msgid "Un mundo"
+msgstr "A world"
+
+msgid "Un viaje a través de su gastronomía"
+msgstr "A journey through its cuisine"
+
+msgid "Una tarde"
+msgstr "An afternoon"
+
+#, python-format
+msgid "Ver detalle de %(nombre)s"
+msgstr "View details for %(nombre)s"
+
+#, python-format
+msgid "Ver el plato %(nombre)s"
+msgstr "View dish %(nombre)s"
+
+msgid "Ver plato"
+msgstr "View dish"
+
+#: core/templates/sugerencias/nueva.html:15
+msgid "Volver al plato"
+msgstr "Back to dish"
+
+msgid "al menú"
+msgstr "to the menu"
+
+msgid "de película"
+msgstr "at the movies"
+
+msgctxt "portada"
+msgid "de película"
+msgstr "of cinema"
+
+#: core/templates/platos/lista.html
+msgid "Nuestro"
+msgstr "Our"
+
+#: core/templates/platos/lista.html
+msgid "recetario"
+msgstr "recipe book"
+
+msgid "Sugerir un plato"
+msgstr "Suggest a dish"
+
+msgid "Película"
+msgstr "Film"
+
+msgid "Selecciona un plato"
+msgstr "Select a dish"
+
+msgid "Elige un plato del catálogo que todavía no esté relacionado con esta película."
+msgstr "Choose a dish from the catalogue that is not yet linked to this film."
+
+msgid "Volver a la película"
+msgstr "Back to film"
+
+
+msgid "Nombre del plato"
+msgstr "Dish name"
+
+msgid "Escribe el nombre del plato…"
+msgstr "Enter the name of the dish…"
+
+msgid "Describe el plato o la escena en la que aparece…"
+msgstr "Describe the dish or the scene in which it appears…"
+
+msgid "Escribe el nombre de un plato que aparezca en esta película. No es necesario que esté en el catálogo."
+msgstr "Enter the name of a dish that appears in this film. It does not need to be in the catalogue."

@@ -1,0 +1,12 @@
+{% load static i18n catalogo_idioma %}
+{% for pelicula in peliculas %}
+    <a href="{% url 'detalle_pelicula' pelicula.id %}"
+       class="pelicula-caja">
+        <div class="pelicula-imagen">
+            <img src="{% static 'images/portadas/' %}{{ pelicula.titulo|slugify }}.jpg"
+                 alt="{{ pelicula.titulo|catalogo }}">
+        </div>
+    </a>
+{% empty %}
+    <p class="sin-peliculas">{% translate "No hay películas para esta búsqueda." %}</p>
+{% endfor %}

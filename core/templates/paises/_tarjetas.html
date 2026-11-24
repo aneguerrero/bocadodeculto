@@ -1,0 +1,22 @@
+{% load static i18n catalogo_idioma %}
+<div class="pasaporte-sellos">
+    <span class="unicode-avion">✈︎</span>
+    <div>
+        <h2>{% translate "Mis destinos" %}</h2>
+        <p>{% translate "Selecciona un sello para comenzar tu viaje." %}</p>
+    </div>
+    <span class="num-sellos">{{ paises|length }} {% if paises|length == 1 %}{% translate "SELLO" %}{% else %}{% translate "SELLOS" %}{% endif %}</span>
+</div>
+
+<section class="sellos-grid" id="paises">
+    {% for pais in paises %}
+        <a class="sello-pais" href="{% url 'detalle_pais' pais.id %}">
+            <img class="imagen-sello"
+                 src="{% static pais.imagen_sello %}"
+                 alt="{% blocktranslate with nombre=pais.nombre|catalogo %}Sello de {{ nombre }}{% endblocktranslate %}">
+            <h3>{{ pais.nombre|catalogo }}</h3>
+        </a>
+    {% empty %}
+        <p class="sin-paises">{% if q %}{% translate "No hay países para esta búsqueda." %}{% else %}{% translate "Todavía no hay países registrados." %}{% endif %}</p>
+    {% endfor %}
+</section>

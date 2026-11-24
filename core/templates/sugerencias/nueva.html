@@ -1,17 +1,20 @@
 {% extends "base.html" %}
-{% load i18n %}
+{% load static i18n catalogo_idioma %}
 
 {% block contenido %}
-  <h1>{% translate "Sugerir una película" %}</h1>
-  <p>{% translate "Plato" %}: <strong>{{ plato.nombre }}</strong></p>
-
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">{% translate "Enviar sugerencia" %}</button>
-  </form>
-
-  <p><a href="{% url 'detalle_plato' plato.id %}">
-    {% translate "Volver al plato" %}
-  </a></p>
+<section class="sugerencia-panel" aria-labelledby="sugerencia-titulo">
+    <header class="sugerencia-encabezado">
+        <img src="{% static 'images/claqueta.png' %}" alt="">
+        <h1 id="sugerencia-titulo">{% translate "Sugerir una película" %}</h1>
+        <p>{% translate "Plato" %}: <strong>{{ plato.nombre|catalogo }}</strong></p>
+    </header>
+    <form method="post" class="sugerencia-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="sugerencia-acciones">
+            <button type="submit" class="btn-sugerir">{% translate "Enviar sugerencia" %}</button>
+            <a class="sugerencia-volver" href="{% url 'detalle_plato' plato.id %}">{% translate "Volver al plato" %}</a>
+        </div>
+    </form>
+</section>
 {% endblock %}

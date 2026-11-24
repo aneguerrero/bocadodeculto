@@ -8,7 +8,7 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
-        modelos = ("pais", "plato", "pelicula", "sugerencia")
+        modelos = ("pais", "plato", "pelicula", "sugerencia", "sugerenciaplato")
         roles = {"Consulta": ("view",), "Edición": ("view", "add", "change")}
         for nombre, acciones in roles.items():
             grupo, _ = Group.objects.get_or_create(name=nombre)

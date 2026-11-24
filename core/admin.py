@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pais, Pelicula, Plato, Sugerencia
+from .models import Pais, Pelicula, Plato, Sugerencia, SugerenciaPlato
 
 admin.site.site_header = "Bocado de Culto"
 admin.site.site_title = "Bocado de Culto"
@@ -32,3 +32,12 @@ class SugerenciaAdmin(admin.ModelAdmin):
     list_display = ("titulo_pelicula", "plato")
     list_filter = ("plato__pais_origen",)
     search_fields = ("titulo_pelicula", "plato__nombre")
+
+
+# Las propuestas de platos nuevos se revisan por separado.
+@admin.register(SugerenciaPlato)
+class SugerenciaPlatoAdmin(admin.ModelAdmin):
+    list_display = ("nombre_plato", "pelicula")
+    list_filter = ("pelicula",)
+    search_fields = ("nombre_plato", "pelicula__titulo", "comentario")
+    list_select_related = ("pelicula",)

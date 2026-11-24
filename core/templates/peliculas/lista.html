@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
 {% block otros_css %}
 <link rel="stylesheet" href="{% static 'css/pelis.css' %}">
@@ -13,30 +13,34 @@
 <div class="videoclub-encabezado">
     <div>
         <h1>
-            <span>Una tarde</span>
+            <span>{% translate "Una tarde" %}</span>
             <img src="{% static 'images/claqueta.png' %}"
-                 alt="Claqueta"
+                 alt="{% translate "Claqueta" %}"
                  class="icono-claqueta">
-            <span>de película</span>
+            <span>{% translate "de película" %}</span>
         </h1>
     </div>
-    <p>Nuestra colección de cine con recetas icónicas</p>
+    <p>{% translate "Nuestra colección de cine con recetas icónicas" %}</p>
 </div>
 
 <!-- SECCION 2 : ESTANTERÍA DE PELÍCULAS -->
 <h1 class="rellenoheader">header</h1>
-<div class="videoclub-estanteria">
+<form id="buscar" role="search" method="get" action="{% url 'lista_peliculas' %}">
+    <label for="q">{% translate "Buscar película" %}</label>
+    <div class="buscar-controles">
+        <input id="q" name="q" type="search" value="{{ q }}" placeholder="{% translate 'Escribe un título…' %}">
+        <button type="submit">{% translate "Buscar" %}</button>
+        <a id="limpiar" href="{% url 'lista_peliculas' %}">{% translate "Limpiar" %}</a>
+    </div>
+</form>
+
+<div class="videoclub-estanteria" id="videoclub">
 	
-    <div class="peliculas-estanteria">
-		{% for pelicula in peliculas %}
-		    <a href="{% url 'detalle_pelicula' pelicula.id %}"
-		       class="pelicula-caja">
-		        <div class="pelicula-imagen">
-		            <img src="{% static 'images/portadas/' %}{{ pelicula.titulo|slugify }}.jpg"
-		                 alt="{{ pelicula.titulo }}">
-		        </div>
-		    </a>
-		{% endfor %}
+    <div class="peliculas-estanteria" id="resultados" aria-live="polite">
+        {% include "peliculas/_tarjetas.html" %}
     </div>
 </div>
+
+<script defer src="{% static 'js/buscador-platos.js' %}"></script>
+
 {% endblock %}
