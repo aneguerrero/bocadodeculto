@@ -1,0 +1,565 @@
+
+/* =========================================
+   PALETA ORIGINAL DE BOCADO DE CULTO
+========================================= */
+
+:root {
+    --negro: #261b1b;
+    --marron: #74645c;
+    --rojo: #8e2432;
+    --rojoOS: #5f1723;
+    --rojoCL: #c8483b;
+    --crema: #fffaf0;
+    --oro: #eca748;
+    --azul: #6B848F;
+    --azulOS: #26666e;
+    --verde: #586348;
+    --madera: #813b35;
+}
+
+
+/* =========================================
+   TIPOGRAFÍAS ORIGINALES
+========================================= */
+
+@font-face {
+    font-family: "wavery";
+    src: url("/bocado/fonts/wavery.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "tomato";
+    src: url("/bocado/fonts/royaltomato.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "pacifico";
+    src: url("/bocado/fonts/pacifico.woff2") format("woff2");
+}
+
+
+/* =========================================
+   CUERPO Y FONDO DE CUADROS
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* CUERPO Y FONDO */
+body {
+    margin: 0;
+    padding: 38px 0 0;
+    min-width: 320px;
+    min-height: 100vh;
+    position: relative;
+    color: var(--negro);
+    background: url("/bocado/images/bg.jpg") repeat;
+    background-size: 150px 150px;
+}
+
+#app {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* CABECERA ORIGINAL DE BOCADO DE CULTO */
+.cabecera {
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 90px;
+    min-height: 90px;
+    padding: 0;
+
+    background-color: var(--negro);
+    background-image: url("/bocado/images/upperbanner.png");
+    background-repeat: repeat-x;
+    background-position: center center;
+    background-size: auto 90px;
+
+    overflow: visible;
+}
+
+.logo {
+    display: block;
+    width: min(560px, 90vw);
+    height: 190px;
+    object-fit: contain;
+    transform: translateY(12px);
+}
+
+/* SEPARACIÓN DEL LOGO Y EL CONTENIDO */
+.contenedor-principal {
+    width: min(1100px, calc(100% - 2rem));
+    margin: 80px auto 3.25rem;
+}
+
+
+/* =========================================
+   CONTENEDOR CENTRAL
+========================================= */
+
+
+.fondo-menu {
+    position: relative;
+    z-index: 1;
+    min-height: 420px;
+
+    padding: 3rem 2.5rem;
+
+    background-color: var(--crema);
+    background-image: url("/bocado/images/textura-menu.jpg");
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    background-position: top left;
+
+    border: 5px solid var(--azul);
+    outline: 5px solid var(--rojo);
+
+    box-shadow: 5px 8px 20px rgba(38, 27, 27, 0.25);
+}
+
+
+/* Bordes de cuadros blancos y negros */
+
+.fondo-menu::before,
+.fondo-menu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 22px;
+
+    background-image: url("/bocado/images/checkered.jpg");
+    background-repeat: repeat-x;
+    background-size: auto 188.6px;
+}
+
+.fondo-menu::before {
+    top: 0;
+}
+
+.fondo-menu::after {
+    bottom: 0;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+========================================= */
+
+/* ENCABEZADO DE LA AGENDA */
+
+.encabezado-agenda {
+    display: block;
+    width: 100%;
+    margin: 0 auto 2rem;
+    padding-bottom: 1.5rem;
+
+    text-align: center;
+    border-bottom: 5px double var(--rojo);
+}
+
+.encabezado-texto {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.titulo-menu {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-family: "pacifico", cursive;
+    font-size: clamp(2.2rem, 5vw, 4.2rem);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+
+    color: var(--rojoCL);
+
+    text-shadow:
+        2px 2px 0 var(--oro),
+        4px 4px 0 var(--negro);
+}
+
+.subtitulo-agenda {
+    width: 100%;
+    margin: 0;
+
+    color: var(--marron);
+    font-family: "wavery", Georgia, serif;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   BLOQUES DEL MENÚ
+========================================= */
+
+.bloque-agenda {
+    position: relative;
+
+    margin: 2.5rem auto;
+    padding: 2rem;
+
+    background-color: rgba(255, 250, 240, 0.85);
+    background-image: url("/bocado/images/textura-menu.jpg");
+
+    border: 3px double var(--rojo);
+    outline: 1px dashed var(--oro);
+    outline-offset: -9px;
+
+    box-shadow: 3px 5px 12px rgba(55, 35, 20, 0.13);
+}
+
+.bloque-agenda h2 {
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.8rem;
+
+    color: var(--rojoCL);
+    font-family: "tomato", Georgia, serif;
+    font-size: 2rem;
+    font-weight: normal;
+    text-align: center;
+
+    border-bottom: 1px dotted var(--marron);
+}
+
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.campos-formulario {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    color: var(--rojoOS);
+
+    font-family: "wavery", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.campo input {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px;
+
+    border: 2px solid var(--marron);
+    border-radius: 2px;
+
+    background-color: var(--crema);
+    color: var(--negro);
+
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+}
+
+.campo input::placeholder {
+    color: var(--marron);
+    opacity: 0.75;
+}
+
+.campo input:focus {
+    outline: 3px solid var(--azulOS);
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   BOTONES CON ESTÉTICA DE TICKET
+========================================= */
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 10px 20px;
+
+    border: 2px solid var(--rojoOS);
+    border-radius: 3px;
+
+    background-color: var(--rojoOS);
+    color: var(--crema);
+
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-weight: bold;
+
+    outline: 1px dashed var(--oro);
+    outline-offset: -5px;
+
+    box-shadow: 2px 3px 0 rgba(38, 27, 27, 0.22);
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-principal {
+    display: flex;
+    width: fit-content;
+    margin: 1.5rem auto 0;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background-color: var(--rojo);
+    border-color: var(--rojoOS);
+}
+
+button:focus-visible {
+    outline: 3px solid var(--azulOS);
+    outline-offset: 4px;
+}
+
+
+/* =========================================
+   MENSAJE SIN CONTACTOS
+========================================= */
+
+.sin-contactos {
+    margin: 15px auto;
+    padding: 10px 0;
+
+    color: var(--rojoOS);
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    text-align: center;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* =========================================
+   TARJETAS DE CONTACTOS
+========================================= */
+
+.lista-contactos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.contacto-card {
+    min-width: 0;
+    padding: 7px;
+
+    background-color: var(--madera);
+    border: 3px solid #68462e;
+
+    box-shadow: 3px 4px 7px rgba(48, 34, 24, 0.3);
+
+    transition: transform 0.25s ease;
+}
+
+/* Igual que las tarjetas del catálogo */
+
+.contacto-card:nth-child(4n + 2) {
+    background-color: #435b65;
+}
+
+.contacto-card:nth-child(4n + 3) {
+    background-color: #a4773f;
+}
+
+.contacto-card:nth-child(4n + 4) {
+    background-color: var(--verde);
+}
+
+.contacto-card:hover {
+    transform: translateY(-5px);
+}
+
+.contacto-contenido {
+    min-height: 175px;
+    height: 100%;
+    padding: 18px 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #fffaf0;
+    background-image: none;
+
+    border: 2px solid var(--oro);
+}
+
+.contacto-datos {
+    width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.contacto-datos h3 {
+    margin: 5px 0 12px;
+
+    color: var(--rojo);
+    font-family: "tomato", Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.contacto-datos p {
+    margin: 7px 0;
+
+    color: var(--marron);
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+}
+
+
+/* Botón de eliminar */
+
+.btn-borrar {
+    margin-top: 15px;
+    min-height: 34px;
+    padding: 7px 13px;
+    font-size: 0.85rem;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+/* PIE DE PÁGINA - COPIA DEL CSS ORIGINAL */
+
+.pie-agenda {
+    position: relative;
+    z-index: 1;
+
+    background-color: var(--negro);
+    background-image: url("/bocado/images/upperbanner.png");
+    background-repeat: repeat-x;
+    background-position: center top;
+    background-size: auto 90px;
+
+    margin-top: 50px;
+    padding: 115px 20px 30px;
+    text-align: center;
+    overflow: visible;
+
+    font-family: "bengui";
+}
+
+.pie-agenda .footer-contenido {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: var(--crema);
+}
+
+.pie-agenda .footer-contenido p {
+    text-align: center;
+}
+
+.pie-agenda .footer-copy {
+    font-size: 1rem;
+    line-height: 2;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .fondo-menu {
+        padding: 2.5rem 1.2rem;
+    }
+
+    .encabezado-agenda {
+        gap: 5px;
+    }
+
+    .icono-cubiertos {
+        width: 65px;
+        height: 75px;
+    }
+
+    .campos-formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .bloque-agenda {
+        padding: 1.5rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .banner {
+        min-height: 105px;
+    }
+
+    .logo {
+    height: 125px;
+    max-width: 85vw;
+    }
+
+    .contenedor-principal {
+        width: calc(100% - 28px);
+    }
+
+    .fondo-menu {
+        padding: 2rem 0.8rem;
+    }
+
+    .icono-cubiertos {
+        display: none;
+    }
+
+    .titulo-menu {
+        font-size: 2.2rem;
+    }
+
+    .subtitulo-agenda {
+        font-size: 1rem;
+    }
+
+    .bloque-agenda {
+        padding: 1.2rem;
+    }
+
+}
