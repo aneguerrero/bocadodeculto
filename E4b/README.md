@@ -62,10 +62,36 @@ Para aplicarlas:
 - Compilación inicial: correcta.
 - npm audit tras actualizar dependencias: 0 vulnerabilidades.
 
+
 ## Publicación
 
-URL de Netlify: pendiente de confirmar.
+URL de Netlify:
+https://bocado-de-culto-agenda.netlify.app/
 
-Validación HTML W3C: pendiente.
-Validación CSS W3C: pendiente.
-Pruebas en producción: pendientes.
+Fecha de comprobación: 27/11/2026
+
+## Validaciones W3C
+
+- HTML: sin errores ni advertencias tras excluir
+  los elementos externos añadidos por Netlify
+  y otros scripts ajenos a la aplicación.
+- CSS: validación superada sin errores.
+
+Validadores utilizados:
+- HTML: https://validator.w3.org/
+- CSS: https://jigsaw.w3.org/css-validator/
+
+## Pruebas en producción
+
+- Crear contactos: correcto.
+- Persistencia después de pulsar F5: correcto.
+- Eliminar contactos: correcto.
+- Acceso público a la web: correcto.
+
+## Pruebas en local
+
+- Autenticación anónima: correcto.
+- Aislamiento de contactos entre sesiones: correcto.
+- Almacenamiento en Cloud Firestore: correcto.
+- Compilación con npm run build: correcto.
+- npm audit: 0 vulnerabilidades detectadas.
