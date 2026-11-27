@@ -1,31 +1,36 @@
-
-import { ref } from 'vue';
+import { inject } from "vue";
+import { useCollection } from "vuefire";
+import { collection, addDoc, deleteDoc, doc } from "firebase/firestore";
+import { db } from "./firebase.js";
 
 export function useContactos() {
+  const uid = inject("uidAgenda");
 
-    const contactos = ref([]);
-    let siguienteId = 1;
+  const lista = collection(db, "usuarios", uid, "contactos");
 
-    function crearContacto(datos) {
-        const nuevoContacto = {
-            id: siguienteId++,
-            nombre: datos.nombre,
-            email: datos.email,
-            telefono: String(datos.telefono)
-        };
+  const {
+    data: contactos,
+    pending: cargando,
+    error
+  } = useCollection(lista);
 
-        contactos.value.push(nuevoContacto);
-    }
+  async function crearContacto(datos) {
+    await addDoc(lista, {
+      nombre: datos.nombre,
+      email: datos.email,
+      telefono: datos.telefono
+    });
+  }
 
-    function borrarContacto(id) {
-        contactos.value = contactos.value.filter(
-            contacto => contacto.id !== id
-        );
-    }
+  async function borrarContacto(id) {
+    await deleteDoc(doc(lista, id));
+  }
 
-    return {
-        contactos,
-        crearContacto,
-        borrarContacto
-    };
+  return {
+    contactos,
+    cargando,
+    error,
+    crearContacto,
+    borrarContacto
+  };
 }
