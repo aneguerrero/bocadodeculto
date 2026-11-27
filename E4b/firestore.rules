@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /usuarios/{uid}/contactos/{id} {
+
+      function esTitular() {
+        return request.auth != null && request.auth.uid == uid;
+      }
+
+      function texto(valor, maximo) {
+        return valor is string && valor.size() > 0 && valor.size() <= maximo;
+      }
+
+      allow read, delete: if esTitular();
+
+      allow create: if esTitular() &&
+        request.resource.data.keys().hasAll(['nombre', 'email', 'telefono']) &&
+        request.resource.data.keys().hasOnly(['nombre', 'email', 'telefono']) &&
+        texto(request.resource.data.nombre, 100) &&
+        texto(request.resource.data.email, 254) &&
+        texto(request.resource.data.telefono, 30);
+    }
+  }
+}

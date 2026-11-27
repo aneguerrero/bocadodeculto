@@ -9,10 +9,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.44"
+    "firebase": "^12.19.0",
+    "vue": "^3.5.44",
+    "vuefire": "^3.2.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.10",
     "vite": "^8.3.6"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "1.14.7"
   }
 }
