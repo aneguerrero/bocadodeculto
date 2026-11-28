@@ -14,12 +14,14 @@ Desde la carpeta que contiene `manage.py`:
 ```bash
 python -m pip install -r requirements.txt
 python manage.py migrate
+python manage.py cargar_demo
+python manage.py preparar_roles
 python manage.py runserver
 ```
 
 Abre `http://127.0.0.1:8000/`. El panel de administración está disponible en `http://127.0.0.1:8000/admin/`.
 
-La base de datos SQLite incluida (`db.sqlite3`) contiene el catálogo de demostración. Si se crea una base de datos vacía, `migrate` prepara el esquema, pero no introduce automáticamente los datos de demostración.
+El comando python manage.py cargar_demo carga el catálogo desde core/fixtures/bocado_demo.json cuando la base está vacía. Incluye 14 países, 63 platos, 41 películas, 75 relaciones entre películas y platos, una sugerencia de película y una sugerencia de plato. Si se vuelve a ejecutar, conserva los datos existentes. El comando python manage.py preparar_roles prepara los grupos Consulta y Edición.
 
 ## Secciones
 
