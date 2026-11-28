@@ -2,6 +2,19 @@
 
 Aplicación web desarrollada con Django para explorar la relación entre platos populares del cine, sus países de procedencia y las películas en las que aparecen.
 
+## Entrega E4
+
+- [E4a · Bocado de Culto en Render](https://bocado-de-culto-e4.onrender.com/)
+- [E4b · Agenda de contactos en Netlify](https://bocado-de-culto-agenda.netlify.app/)
+
+En Django implementamos las opciones 1, 3, 4, 5, 6 y 8. El catálogo permite buscar sin recargar la página, cambiar entre castellano e inglés y enviar sugerencias de platos y películas. El panel de administración tiene los roles Consulta y Edición. El catálogo inicial se carga desde un archivo JSON y la web está desplegada en Render con PostgreSQL.
+
+La agenda permite ver, crear y borrar contactos. Implementamos la opción 2 de E4b con VueFire y Firebase para conservar los contactos de cada visitante.
+
+### Prueba de persistencia en Render
+
+El 28 de noviembre de 2026 enviamos «Película de prueba Render 28N» desde la ficha de Ramen de Cerdo y «Plato de prueba Render 28N» desde la ficha de Ratatouille. Tras volver a desplegar la web, consultamos PostgreSQL y encontramos exactamente un registro de cada sugerencia.
+
 ## Requisitos
 
 - Python 3.12 o superior.
@@ -33,7 +46,7 @@ El comando python manage.py cargar_demo carga el catálogo desde core/fixtures/b
 
 ## Datos incluidos
 
-La base de datos proporcionada contiene 14 países, 63 platos y 41 películas. Las imágenes del catálogo se encuentran en `static/images/`. Los países que todavía no tengan un sello ilustrado propio utilizan el sello genérico.
+El catálogo inicial incluye 14 países, 63 platos y 41 películas. Las imágenes del catálogo se encuentran en `static/images/`. Los países que todavía no tengan un sello ilustrado propio utilizan el sello genérico.
 
 ## Pruebas
 
