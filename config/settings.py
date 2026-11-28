@@ -139,3 +139,37 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # Use an explicit default primary-key type for new models.
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+en_render = os.environ.get("RENDER") == "true"
+
+if en_render or os.environ.get("DATABASE_URL"):
+    import dj_database_url
+
+    DATABASES["default"] = dj_database_url.parse(
+        os.environ["DATABASE_URL"],
+        conn_max_age=60,
+    )
+
+if en_render:
+    SECRET_KEY = os.environ["SECRET_KEY"]
+    DEBUG = False
+
+    host = os.environ["RENDER_EXTERNAL_HOSTNAME"]
+    ALLOWED_HOSTS = [host]
+    CSRF_TRUSTED_ORIGINS = [f"https://{host}"]
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+    MIDDLEWARE.insert(1, "whitenoise.middleware.WhiteNoiseMiddleware")
+
+    STORAGES = {
+        "default": {
+            "BACKEND": "django.core.files.storage.FileSystemStorage",
+        },
+        "staticfiles": {
+            "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+        },
+    }

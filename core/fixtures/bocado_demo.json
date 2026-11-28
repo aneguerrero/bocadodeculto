@@ -1,0 +1,1252 @@
+[
+  {
+    "model": "core.pais",
+    "pk": 1,
+    "fields": {
+      "nombre": "Estados Unidos"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 2,
+    "fields": {
+      "nombre": "Italia"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 3,
+    "fields": {
+      "nombre": "Japón"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 4,
+    "fields": {
+      "nombre": "Francia"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 5,
+    "fields": {
+      "nombre": "México"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 6,
+    "fields": {
+      "nombre": "India"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 7,
+    "fields": {
+      "nombre": "Reino Unido"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 8,
+    "fields": {
+      "nombre": "España"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 9,
+    "fields": {
+      "nombre": "China"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 10,
+    "fields": {
+      "nombre": "Corea del Sur"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 11,
+    "fields": {
+      "nombre": "Taiwán"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 12,
+    "fields": {
+      "nombre": "Grecia"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 13,
+    "fields": {
+      "nombre": "Tailandia"
+    }
+  },
+  {
+    "model": "core.pais",
+    "pk": 14,
+    "fields": {
+      "nombre": "Cuba"
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 1,
+    "fields": {
+      "nombre": "Hamburguesa Royale con Queso",
+      "descripcion": "Mítica hamburguesa de un cuarto de libra comentada por Vincent Vega y Jules Winnfield.",
+      "pais_origen": 1
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 2,
+    "fields": {
+      "nombre": "Batido de 5 Dólares",
+      "descripcion": "Famoso batido sabor vainilla servido en el restaurante Jack Rabbit Slim's.",
+      "pais_origen": 1
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 3,
+    "fields": {
+      "nombre": "Spaghetti con Albóndigas",
+      "descripcion": "Plato tradicional elaborado con la receta secreta de la familia Corleone.",
+      "pais_origen": 2
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 4,
+    "fields": {
+      "nombre": "Pizza Margherita",
+      "descripcion": "Clásica pizza artesanal con tomate, mozzarella fresca y albahaca.",
+      "pais_origen": 2
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 5,
+    "fields": {
+      "nombre": "Ratatouille",
+      "descripcion": "Guiso tradicional de verduras horneadas en finas rodajas que conquista al crítico Anton Ego.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 6,
+    "fields": {
+      "nombre": "Sopa de Cebolla",
+      "descripcion": "Sopa caliente gratinada con queso y pan tostado, clásica de la gastronomía parisina.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 7,
+    "fields": {
+      "nombre": "Ramen de Cerdo",
+      "descripcion": "Sopa de fideos en caldo concentrado con lonchas de chashu y huevo marinado.",
+      "pais_origen": 3
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 8,
+    "fields": {
+      "nombre": "Bento de Arroz y Ciruela",
+      "descripcion": "Caja de almuerzo tradicional con base de arroz blanco y una umeboshi central.",
+      "pais_origen": 3
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 9,
+    "fields": {
+      "nombre": "Hamburguesa Big Kahuna",
+      "descripcion": "Hamburguesa ficticia de la cadena que se menciona en Pulp Fiction; un guiño a la cultura de los diners estadounidenses.",
+      "pais_origen": 1
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 10,
+    "fields": {
+      "nombre": "Sándwich de pastrami",
+      "descripcion": "Pastrami de ternera con mostaza y pepinillos en pan de centeno, inmortalizado en la escena de Katz’s Delicatessen.",
+      "pais_origen": 1
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 11,
+    "fields": {
+      "nombre": "Sándwich cubano",
+      "descripcion": "Bocadillo prensado de cerdo asado, jamón, queso, pepinillos y mostaza, preparado en la ruta gastronómica de Chef.",
+      "pais_origen": 14
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 12,
+    "fields": {
+      "nombre": "Sándwich de queso a la plancha",
+      "descripcion": "Sencillo sándwich tostado de queso fundido, ejemplo de comida reconfortante en la cocina cinematográfica estadounidense.",
+      "pais_origen": 1
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 13,
+    "fields": {
+      "nombre": "Cannoli sicilianos",
+      "descripcion": "Tubos crujientes rellenos de ricotta dulce, asociados a la tradición siciliana y a la famosa frase de El padrino.",
+      "pais_origen": 2
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 14,
+    "fields": {
+      "nombre": "Timpano italiano",
+      "descripcion": "Gran pastel horneado de pasta, salsa, carnes, huevo y queso que ocupa el centro del banquete de Big Night.",
+      "pais_origen": 2
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 15,
+    "fields": {
+      "nombre": "Ragú italiano",
+      "descripcion": "Salsa cocinada lentamente con tomate y carne, presente en el imaginario de las comidas familiares de películas sobre familias italoamericanas.",
+      "pais_origen": 2
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 16,
+    "fields": {
+      "nombre": "Pasta aglio e olio",
+      "descripcion": "Espaguetis con ajo, aceite de oliva y guindilla, plato de cocina sencilla que se prepara en Chef.",
+      "pais_origen": 2
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 17,
+    "fields": {
+      "nombre": "Crème brûlée",
+      "descripcion": "Crema de vainilla cubierta por una fina capa de azúcar caramelizado, uno de los pequeños placeres que disfruta Amélie.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 18,
+    "fields": {
+      "nombre": "Boeuf bourguignon",
+      "descripcion": "Estofado de ternera al vino tinto con verduras, ligado a la cocina francesa que Julie Powell aprende a preparar en Julie & Julia.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 19,
+    "fields": {
+      "nombre": "Trufas de chocolate",
+      "descripcion": "Pequeñas piezas de chocolate intenso que evocan el universo de la chocolatería artesanal de Chocolat.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 20,
+    "fields": {
+      "nombre": "Courtesan au Chocolat",
+      "descripcion": "Pastel ficticio de varios pisos con crema y glaseado, inspirado en el dulce de colores que aparece en El Gran Hotel Budapest.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 21,
+    "fields": {
+      "nombre": "Pot-au-feu",
+      "descripcion": "Guiso francés de carne y verduras cocido lentamente, representativo de la cocina meticulosa que protagoniza A fuego lento.",
+      "pais_origen": 4
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 22,
+    "fields": {
+      "nombre": "Onigiri",
+      "descripcion": "Bolas de arroz moldeado, a menudo rellenas y envueltas en alga nori; son una comida cotidiana reconocible del cine japonés.",
+      "pais_origen": 3
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 23,
+    "fields": {
+      "nombre": "Omurice",
+      "descripcion": "Arroz salteado cubierto por una tortilla fina; una de las escenas culinarias memorables de Tampopo.",
+      "pais_origen": 3
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 24,
+    "fields": {
+      "nombre": "Sushi nigiri",
+      "descripcion": "Pequeñas porciones de arroz avinagrado coronadas por pescado, ligadas al trabajo artesanal retratado en Jiro Dreams of Sushi.",
+      "pais_origen": 3
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 25,
+    "fields": {
+      "nombre": "Ramen con jamón y huevo",
+      "descripcion": "Bol de fideos en caldo con jamón y huevo, la comida reconfortante que prepara la familia de Ponyo.",
+      "pais_origen": 3
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 27,
+    "fields": {
+      "nombre": "Codornices en pétalos de rosa",
+      "descripcion": "Codornices con una salsa perfumada de pétalos de rosa, el plato más emblemático de Como agua para chocolate.",
+      "pais_origen": 5
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 28,
+    "fields": {
+      "nombre": "Tamales mexicanos",
+      "descripcion": "Masa de maíz rellena y cocida en hojas, parte de las reuniones familiares y del paisaje culinario mexicano de Coco.",
+      "pais_origen": 5
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 29,
+    "fields": {
+      "nombre": "Pan de muerto",
+      "descripcion": "Pan dulce aromático tradicional de la celebración del Día de Muertos, apropiado para el mundo familiar de Coco.",
+      "pais_origen": 5
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 30,
+    "fields": {
+      "nombre": "Enchiladas rojas",
+      "descripcion": "Tortillas rellenas bañadas en salsa de chile, un plato casero de la cocina mexicana representada en Tortilla Soup.",
+      "pais_origen": 5
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 31,
+    "fields": {
+      "nombre": "Mole poblano",
+      "descripcion": "Salsa compleja de chiles y especias, a veces con cacao, que representa la amplitud de la cocina mexicana.",
+      "pais_origen": 5
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 32,
+    "fields": {
+      "nombre": "Tortillas de maíz",
+      "descripcion": "Tortillas redondas de maíz que sirven de base para numerosos platos y comidas compartidas de México.",
+      "pais_origen": 5
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 33,
+    "fields": {
+      "nombre": "Thali vegetariano",
+      "descripcion": "Bandeja con varias pequeñas preparaciones, arroz, legumbres, verduras y pan, inspirada en los banquetes de la cocina india.",
+      "pais_origen": 6
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 34,
+    "fields": {
+      "nombre": "Curry indio",
+      "descripcion": "Guiso especiado con salsa aromática; en Un viaje de diez metros, la cocina india se contrapone y dialoga con la francesa.",
+      "pais_origen": 6
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 35,
+    "fields": {
+      "nombre": "Naan",
+      "descripcion": "Pan plano horneado que acompaña curris y salsas, habitual en las mesas de la cocina del norte de India.",
+      "pais_origen": 6
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 36,
+    "fields": {
+      "nombre": "Samosas",
+      "descripcion": "Empanadillas triangulares de masa crujiente rellenas de patata, guisantes o especias.",
+      "pais_origen": 6
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 37,
+    "fields": {
+      "nombre": "Chai masala",
+      "descripcion": "Té negro hervido con leche y especias, una bebida cotidiana vinculada a la cultura de las estaciones y las casas de India.",
+      "pais_origen": 6
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 38,
+    "fields": {
+      "nombre": "Biryani",
+      "descripcion": "Arroz especiado cocinado con verduras o carne, plato festivo frecuente en celebraciones y banquetes indios.",
+      "pais_origen": 6
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 39,
+    "fields": {
+      "nombre": "Sándwich de mermelada de naranja",
+      "descripcion": "El sándwich de mermelada que Paddington lleva consigo y que se convierte en parte esencial de su personaje.",
+      "pais_origen": 7
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 40,
+    "fields": {
+      "nombre": "Tarta de melaza",
+      "descripcion": "Postre británico de melaza dorada asociado al repertorio de dulces del mundo de Harry Potter.",
+      "pais_origen": 7
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 42,
+    "fields": {
+      "nombre": "Gazpacho andaluz",
+      "descripcion": "Sopa fría de tomate y verduras que tiene un papel central y muy recordado en Mujeres al borde de un ataque de nervios.",
+      "pais_origen": 8
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 43,
+    "fields": {
+      "nombre": "Tortilla española",
+      "descripcion": "Tortilla jugosa de patata y huevo, preparada en bares y cocinas familiares españolas.",
+      "pais_origen": 8
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 44,
+    "fields": {
+      "nombre": "Jamón ibérico",
+      "descripcion": "Jamón curado de sabor intenso, referencia gastronómica y visual en Jamón, jamón.",
+      "pais_origen": 8
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 45,
+    "fields": {
+      "nombre": "Paella valenciana",
+      "descripcion": "Arroz cocinado en paellera con verduras y carnes, uno de los platos españoles más reconocibles internacionalmente.",
+      "pais_origen": 8
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 46,
+    "fields": {
+      "nombre": "Crema catalana",
+      "descripcion": "Postre de crema aromatizada con cítricos y canela, cubierto con azúcar caramelizado.",
+      "pais_origen": 8
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 47,
+    "fields": {
+      "nombre": "Jiaozi (empanadillas chinas)",
+      "descripcion": "Empanadillas rellenas que se comparten durante reuniones familiares y celebraciones, como en el cine centrado en familias chinas.",
+      "pais_origen": 9
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 48,
+    "fields": {
+      "nombre": "Sopa de wonton",
+      "descripcion": "Caldo caliente con pequeños wonton rellenos, común en la tradición culinaria cantonesa.",
+      "pais_origen": 9
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 49,
+    "fields": {
+      "nombre": "Cerdo char siu",
+      "descripcion": "Cerdo asado con un glaseado dulce y especiado, típico de la cocina cantonesa y del repertorio cinematográfico de Hong Kong.",
+      "pais_origen": 9
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 50,
+    "fields": {
+      "nombre": "Dim sum variado",
+      "descripcion": "Selección de bocados pequeños, al vapor o fritos, pensados para compartir en una mesa familiar.",
+      "pais_origen": 9
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 51,
+    "fields": {
+      "nombre": "Ram-don (chapaguri)",
+      "descripcion": "Combinación de dos fideos instantáneos coreanos con carne, plato que adquiere un lugar memorable en Parásitos.",
+      "pais_origen": 10
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 52,
+    "fields": {
+      "nombre": "Pollo frito coreano",
+      "descripcion": "Pollo crujiente con una salsa intensa, vinculado al restaurante de pollo que sirve de tapadera en Extreme Job.",
+      "pais_origen": 10
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 53,
+    "fields": {
+      "nombre": "Jeon de kimchi",
+      "descripcion": "Tortita salada de kimchi y masa, una preparación casera de la cocina coreana.",
+      "pais_origen": 10
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 54,
+    "fields": {
+      "nombre": "Bibimbap",
+      "descripcion": "Bol de arroz con verduras, pasta de chile y, a menudo, huevo y carne, servido mezclado antes de comer.",
+      "pais_origen": 10
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 55,
+    "fields": {
+      "nombre": "Pescado al vapor estilo taiwanés",
+      "descripcion": "Pescado cocinado suavemente con jengibre y aromáticos, inspirado en los banquetes familiares de Comer, beber, amar.",
+      "pais_origen": 11
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 56,
+    "fields": {
+      "nombre": "Arroz taiwanés de cerdo estofado",
+      "descripcion": "Arroz blanco coronado con cerdo cocido lentamente en una salsa sabrosa, clásico de los puestos y hogares taiwaneses.",
+      "pais_origen": 11
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 57,
+    "fields": {
+      "nombre": "Pollo tres tazas",
+      "descripcion": "Pollo cocinado con salsa de soja, aceite de sésamo y albahaca, una receta muy conocida de Taiwán.",
+      "pais_origen": 11
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 58,
+    "fields": {
+      "nombre": "Moussaka griega",
+      "descripcion": "Gratinado de berenjena, carne especiada y bechamel, representativo de la cocina casera griega.",
+      "pais_origen": 12
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 59,
+    "fields": {
+      "nombre": "Baklava",
+      "descripcion": "Dulce de capas finas de masa, frutos secos y almíbar, compartido en celebraciones de la cultura griega.",
+      "pais_origen": 12
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 60,
+    "fields": {
+      "nombre": "Souvlaki",
+      "descripcion": "Brochetas de carne asada que suelen servirse con pan de pita, verduras y salsa.",
+      "pais_origen": 12
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 61,
+    "fields": {
+      "nombre": "Spanakopita",
+      "descripcion": "Empanada de masa filo rellena de espinacas y queso feta.",
+      "pais_origen": 12
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 62,
+    "fields": {
+      "nombre": "Pad see ew",
+      "descripcion": "Fideos de arroz salteados con salsa de soja, huevo y verduras, una receta popular de la comida callejera tailandesa.",
+      "pais_origen": 13
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 63,
+    "fields": {
+      "nombre": "Curry verde tailandés",
+      "descripcion": "Curry aromático elaborado con pasta de hierbas, leche de coco y verduras; muestra la complejidad de sabores de Tailandia.",
+      "pais_origen": 13
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 64,
+    "fields": {
+      "nombre": "Arroz pegajoso con mango",
+      "descripcion": "Postre de arroz glutinoso con leche de coco y mango maduro, uno de los dulces tailandeses más conocidos.",
+      "pais_origen": 13
+    }
+  },
+  {
+    "model": "core.plato",
+    "pk": 65,
+    "fields": {
+      "nombre": "Hamburguesa con queso",
+      "descripcion": "Hamburguesa sencilla con carne, queso fundido y pan tostado; el chef prepara una versión de cheeseburger en El menú.",
+      "pais_origen": 1
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 1,
+    "fields": {
+      "titulo": "Pulp Fiction",
+      "sinopsis": "Las vidas de dos asesinos a sueldo, una esposa de un gángster y un boxeador se entrelazan en historias de violencia y redención.",
+      "director": "Quentin Tarantino",
+      "pais": 1,
+      "platos_maridados": [
+        1,
+        2,
+        9
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 2,
+    "fields": {
+      "titulo": "El Padrino",
+      "sinopsis": "El envejecido patriarca de una dinastía del crimen organizado traslada el control de su imperio clandestino a su hijo reacio.",
+      "director": "Francis Ford Coppola",
+      "pais": 1,
+      "platos_maridados": [
+        3,
+        13,
+        15
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 3,
+    "fields": {
+      "titulo": "Ratatouille",
+      "sinopsis": "Una rata con un sentido del gusto muy desarrollado sueña con convertirse en un gran chef francés en París.",
+      "director": "Brad Bird",
+      "pais": 4,
+      "platos_maridados": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 4,
+    "fields": {
+      "titulo": "El Viaje de Chihiro",
+      "sinopsis": "Una niña de diez años se adentra en un mundo gobernado por dioses, brujas y espíritus donde los humanos se convierten en bestias.",
+      "director": "Hayao Miyazaki",
+      "pais": 3,
+      "platos_maridados": [
+        7,
+        8,
+        22
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 5,
+    "fields": {
+      "titulo": "Tampopo",
+      "sinopsis": "Dos camioneros ayudan a la dueña de un modesto restaurante de ramen a encontrar la receta perfecta para la sopa perfecta.",
+      "director": "Juzo Itami",
+      "pais": 3,
+      "platos_maridados": [
+        7,
+        23
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 6,
+    "fields": {
+      "titulo": "La Grande Bellezza",
+      "sinopsis": "Un veterano periodista reflexiona sobre su vida y la decadente alta sociedad de Roma tras cumplir 65 años.",
+      "director": "Paolo Sorrentino",
+      "pais": 2,
+      "platos_maridados": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 7,
+    "fields": {
+      "titulo": "Cuando Harry encontró a Sally",
+      "sinopsis": "Dos amigos de Nueva York descubren que su relación cambia a medida que pasan los años; una comida en Katz’s Delicatessen contiene una de las escenas más famosas del cine.",
+      "director": "Rob Reiner",
+      "pais": 1,
+      "platos_maridados": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 8,
+    "fields": {
+      "titulo": "Chef",
+      "sinopsis": "Un cocinero deja su restaurante y emprende un viaje en un camión de comida, recuperando la creatividad con recetas sencillas y bocadillos.",
+      "director": "Jon Favreau",
+      "pais": 1,
+      "platos_maridados": [
+        11,
+        12,
+        16
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 9,
+    "fields": {
+      "titulo": "Big Night",
+      "sinopsis": "Dos hermanos inmigrantes intentan salvar su restaurante italiano preparando una cena extraordinaria cuyo plato central es un timpano.",
+      "director": "Campbell Scott y Stanley Tucci",
+      "pais": 1,
+      "platos_maridados": [
+        14,
+        15
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 10,
+    "fields": {
+      "titulo": "Uno de los nuestros",
+      "sinopsis": "Crónica del ascenso y caída de varios miembros del crimen organizado italoamericano, con comidas familiares recurrentes.",
+      "director": "Martin Scorsese",
+      "pais": 1,
+      "platos_maridados": [
+        13,
+        15
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 11,
+    "fields": {
+      "titulo": "La dama y el vagabundo",
+      "sinopsis": "Una perra doméstica y un perro callejero comparten una cena que contiene una de las escenas gastronómicas románticas más conocidas de la animación.",
+      "director": "Clyde Geronimi, Wilfred Jackson y Hamilton Luske",
+      "pais": 1,
+      "platos_maridados": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 12,
+    "fields": {
+      "titulo": "El menú",
+      "sinopsis": "Una pareja viaja a una isla para cenar en un restaurante exclusivo donde el chef convierte cada pase en parte de una experiencia inquietante.",
+      "director": "Mark Mylod",
+      "pais": 1,
+      "platos_maridados": [
+        65
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 13,
+    "fields": {
+      "titulo": "Julie & Julia",
+      "sinopsis": "Dos historias paralelas muestran cómo cocinar recetas francesas transforma la vida cotidiana de dos mujeres.",
+      "director": "Nora Ephron",
+      "pais": 1,
+      "platos_maridados": [
+        18
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 14,
+    "fields": {
+      "titulo": "Amélie",
+      "sinopsis": "Una joven parisina decide intervenir discretamente en la vida de quienes la rodean y disfruta de pequeños rituales cotidianos.",
+      "director": "Jean-Pierre Jeunet",
+      "pais": 4,
+      "platos_maridados": [
+        17
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 15,
+    "fields": {
+      "titulo": "Chocolat",
+      "sinopsis": "Una chocolatera abre una tienda en un pueblo francés y cambia la relación de sus habitantes con la comida y el placer.",
+      "director": "Lasse Hallström",
+      "pais": 4,
+      "platos_maridados": [
+        19
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 16,
+    "fields": {
+      "titulo": "El Gran Hotel Budapest",
+      "sinopsis": "Un conserje y su joven ayudante quedan envueltos en intrigas en un hotel europeo ficticio, donde destaca un dulce de pastelería muy elaborado.",
+      "director": "Wes Anderson",
+      "pais": 4,
+      "platos_maridados": [
+        20
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 17,
+    "fields": {
+      "titulo": "A fuego lento",
+      "sinopsis": "Un cocinero y una gastrónoma comparten una relación construida a través del trabajo, la técnica y la preparación de grandes platos franceses.",
+      "director": "Trần Anh Hùng",
+      "pais": 4,
+      "platos_maridados": [
+        21
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 18,
+    "fields": {
+      "titulo": "Ponyo en el acantilado",
+      "sinopsis": "Una niña pez se hace amiga de un niño y descubre el mundo humano; una sencilla sopa de fideos se convierte en una escena memorable.",
+      "director": "Hayao Miyazaki",
+      "pais": 3,
+      "platos_maridados": [
+        25
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 19,
+    "fields": {
+      "titulo": "Jiro Dreams of Sushi",
+      "sinopsis": "Documental sobre un maestro del sushi y su pequeño restaurante de Tokio, dedicado a la precisión y el perfeccionamiento del oficio.",
+      "director": "David Gelb",
+      "pais": 3,
+      "platos_maridados": [
+        24
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 20,
+    "fields": {
+      "titulo": "Mi vecino Totoro",
+      "sinopsis": "Dos hermanas se mudan al campo y descubren criaturas fantásticas mientras se adaptan a una nueva vida familiar.",
+      "director": "Hayao Miyazaki",
+      "pais": 3,
+      "platos_maridados": [
+        8,
+        22
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 21,
+    "fields": {
+      "titulo": "The Ramen Girl",
+      "sinopsis": "Una joven estadounidense en Tokio aprende a cocinar ramen y encuentra una nueva dirección vital a través del aprendizaje culinario.",
+      "director": "Robert Allan Ackerman",
+      "pais": 3,
+      "platos_maridados": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 22,
+    "fields": {
+      "titulo": "Como agua para chocolate",
+      "sinopsis": "En una familia mexicana, los sentimientos de Tita se expresan a través de recetas que afectan a quienes prueban sus platos.",
+      "director": "Alfonso Arau",
+      "pais": 5,
+      "platos_maridados": [
+        27,
+        31
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 23,
+    "fields": {
+      "titulo": "Coco",
+      "sinopsis": "Miguel viaja al mundo de los muertos durante el Día de Muertos y descubre la historia de su familia y sus tradiciones.",
+      "director": "Lee Unkrich y Adrián Molina",
+      "pais": 5,
+      "platos_maridados": [
+        28,
+        29
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 24,
+    "fields": {
+      "titulo": "Tortilla Soup",
+      "sinopsis": "Un cocinero viudo reúne cada domingo a sus hijas alrededor de comidas que mantienen vivas las tradiciones familiares.",
+      "director": "María Ripoll",
+      "pais": 5,
+      "platos_maridados": [
+        30,
+        31,
+        32
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 25,
+    "fields": {
+      "titulo": "The Lunchbox",
+      "sinopsis": "Un error en el reparto de comida en Bombay conecta a una ama de casa y a un oficinista mediante notas escondidas en una fiambrera.",
+      "director": "Ritesh Batra",
+      "pais": 6,
+      "platos_maridados": [
+        33,
+        37
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 26,
+    "fields": {
+      "titulo": "Un viaje de diez metros",
+      "sinopsis": "Una familia india abre un restaurante frente a un establecimiento francés con estrella Michelin, y ambas cocinas empiezan a influirse.",
+      "director": "Lasse Hallström",
+      "pais": 6,
+      "platos_maridados": [
+        34,
+        35,
+        38
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 27,
+    "fields": {
+      "titulo": "Monsoon Wedding",
+      "sinopsis": "Una familia de Delhi prepara una boda y reúne a varias generaciones alrededor de banquetes y celebraciones.",
+      "director": "Mira Nair",
+      "pais": 6,
+      "platos_maridados": [
+        36,
+        37,
+        38
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 28,
+    "fields": {
+      "titulo": "Paddington",
+      "sinopsis": "Un pequeño oso peruano llega a Londres y aprende a vivir con una familia británica; su afición por la mermelada de naranja lo acompaña.",
+      "director": "Paul King",
+      "pais": 7,
+      "platos_maridados": [
+        39
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 29,
+    "fields": {
+      "titulo": "Harry Potter y la piedra filosofal",
+      "sinopsis": "Un niño descubre que es mago y entra en un internado donde banquetes y dulces forman parte del mundo mágico.",
+      "director": "Chris Columbus",
+      "pais": 7,
+      "platos_maridados": [
+        40
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 30,
+    "fields": {
+      "titulo": "Mujeres al borde de un ataque de nervios",
+      "sinopsis": "Una actriz de doblaje intenta encontrar a su pareja en Madrid y una jarra de gazpacho se convierte en un elemento crucial de la trama.",
+      "director": "Pedro Almodóvar",
+      "pais": 8,
+      "platos_maridados": [
+        42
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 31,
+    "fields": {
+      "titulo": "Volver",
+      "sinopsis": "Tres generaciones de mujeres de una familia manchega se enfrentan a secretos, pérdidas y tareas cotidianas, incluida la cocina.",
+      "director": "Pedro Almodóvar",
+      "pais": 8,
+      "platos_maridados": [
+        43,
+        44
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 32,
+    "fields": {
+      "titulo": "Jamón, jamón",
+      "sinopsis": "Un drama ambientado en España utiliza símbolos de la vida rural y la gastronomía para explorar el deseo, la familia y la identidad.",
+      "director": "Bigas Luna",
+      "pais": 8,
+      "platos_maridados": [
+        44
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 33,
+    "fields": {
+      "titulo": "Vicky Cristina Barcelona",
+      "sinopsis": "Dos amigas estadounidenses pasan el verano en Barcelona y Oviedo, donde conocen a un pintor y a su exmujer.",
+      "director": "Woody Allen",
+      "pais": 8,
+      "platos_maridados": [
+        45,
+        46
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 34,
+    "fields": {
+      "titulo": "Comer, beber, amar",
+      "sinopsis": "Un chef taiwanés y sus tres hijas se reúnen cada semana alrededor de elaboradas cenas familiares.",
+      "director": "Ang Lee",
+      "pais": 11,
+      "platos_maridados": [
+        55,
+        56,
+        57
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 35,
+    "fields": {
+      "titulo": "The Farewell",
+      "sinopsis": "Una familia sino-estadounidense vuelve a China y organiza una boda como excusa para reunirse con su abuela.",
+      "director": "Lulu Wang",
+      "pais": 9,
+      "platos_maridados": [
+        47,
+        50
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 36,
+    "fields": {
+      "titulo": "The God of Cookery",
+      "sinopsis": "Un chef famoso pierde su reputación y trata de recuperarla en una comedia de Hong Kong centrada en concursos y cocina.",
+      "director": "Stephen Chow y Lee Lik-chi",
+      "pais": 9,
+      "platos_maridados": [
+        48,
+        49
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 37,
+    "fields": {
+      "titulo": "Parásitos",
+      "sinopsis": "Una familia con pocos recursos se introduce poco a poco en la vida de una familia rica; una preparación de fideos con carne destaca en una escena clave.",
+      "director": "Bong Joon-ho",
+      "pais": 10,
+      "platos_maridados": [
+        51
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 38,
+    "fields": {
+      "titulo": "Extreme Job",
+      "sinopsis": "Un equipo de policías abre un restaurante de pollo frito para vigilar a una banda, pero el local se vuelve popular.",
+      "director": "Lee Byeong-heon",
+      "pais": 10,
+      "platos_maridados": [
+        52
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 39,
+    "fields": {
+      "titulo": "Little Forest",
+      "sinopsis": "Una joven vuelve a su pueblo natal y encuentra consuelo preparando alimentos estacionales y recuperando sus vínculos con la naturaleza.",
+      "director": "Yim Soon-rye",
+      "pais": 10,
+      "platos_maridados": [
+        53,
+        54
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 40,
+    "fields": {
+      "titulo": "Mi gran boda griega",
+      "sinopsis": "Una mujer grecoestadounidense se enamora de alguien ajeno a su comunidad y las familias se conocen entre celebraciones y comidas compartidas.",
+      "director": "Joel Zwick",
+      "pais": 12,
+      "platos_maridados": [
+        58,
+        59,
+        60,
+        61
+      ]
+    }
+  },
+  {
+    "model": "core.pelicula",
+    "pk": 41,
+    "fields": {
+      "titulo": "Hunger",
+      "sinopsis": "Una cocinera joven entra en el mundo competitivo de la alta cocina tailandesa y se enfrenta a sus exigencias y jerarquías.",
+      "director": "Sitisiri Mongkolsiri",
+      "pais": 13,
+      "platos_maridados": [
+        62,
+        63,
+        64
+      ]
+    }
+  },
+  {
+    "model": "core.sugerencia",
+    "pk": 3,
+    "fields": {
+      "plato": 7,
+      "titulo_pelicula": "Película de prueba E4",
+      "comentario": "Comprobación del formulario de sugerencias."
+    }
+  },
+  {
+    "model": "core.sugerenciaplato",
+    "pk": 2,
+    "fields": {
+      "pelicula": 3,
+      "nombre_plato": "Plato de prueba E4",
+      "comentario": "Comprobación del nuevo formulario."
+    }
+  }
+]
